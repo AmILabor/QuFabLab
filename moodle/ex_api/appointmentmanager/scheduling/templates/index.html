@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if tasks %}
+<div class="row mb-3">
+    <div class="col">
+        <label
+            for="form-select"
+            class="form-label"
+            style="color: var(--bs-orange)"
+        >Kunde</label>
+        <select class="form-select" id="form-select">
+            <option selected value="">Kunde auswählen</option>
+            {% for task in tasks %}
+            <option value="{{ task.id }}">{{ task.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<div class="row mb-3">
+    <div
+        class="col-auto"
+        style="color: var(--bs-orange)"
+    >
+        Mögliche Platzhalter
+    </div>
+    <div
+        class="col-auto"
+        style="color: var(--bs-white)"
+    >
+        {% for placeholder in placeholders %}
+            {{ tag }}{{ placeholder }}{{ tag }}
+        {% endfor %}
+    </div>
+</div>
+{% for task in tasks %}
+<div
+    class="row"
+    id="detail-{{ task.id }}"
+    style="display: none;"
+>
+    <form
+        action="{% url 'update' task.id %}"
+        method="post"
+    >
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col">
+                <label
+                    for="task-{{ task.id }}-content"
+                    class="form-label"
+                    style="color: var(--bs-orange)"
+                >Vorlage Footer</label>
+                <textarea
+                    class="form-control"
+                    id="task-{{ task.id }}-content"
+                    name="content"
+                    rows="10"
+                >{{ task.content }}</textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label
+                    for="task-{{ task.id }}-confirmation"
+                    class="form-label"
+                    style="color: var(--bs-orange)"
+                >Vorlage Bestätigung</label>
+                <textarea
+                    class="form-control"
+                    id="task-{{ task.id }}-confirmation"
+                    name="confirmation"
+                    rows="10"
+                >{{ task.confirmation }}</textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label
+                    for="task-{{ task.id }}-reminder"
+                    class="form-label"
+                    style="color: var(--bs-orange)"
+                >Vorlage Erinnerung</label>
+                <textarea
+                    class="form-control"
+                    id="task-{{ task.id }}-reminder"
+                    name="reminder"
+                    rows="10"
+                >{{ task.reminder }}</textarea>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <button
+                    type="submit"
+                    class="btn btn-light"
+                >Speichern</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endfor %}
+{% endif %}
+
+<script>
+    const select = document.querySelector('.form-select');
+    let current = select.value;
+
+    function updateSelection () {
+        if (current)
+            document.getElementById('detail-' + current).style.display = 'none';
+        current = select.value;
+        if (current)
+            document.getElementById('detail-' + current).style.display = 'block';
+    }
+
+    select.addEventListener('change', () => updateSelection());
+    updateSelection();
+</script>
+{% endblock %}

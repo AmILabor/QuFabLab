@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Terminvorlagen</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+</head>
+<body style="background-color: var(--bs-gray-dark)">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <img
+                    src="{% static 'images/banner.png' %}"
+                    class="img-fluid my-3 d-block mx-auto"
+                    height="300"
+                    loading="lazy"
+                    alt="Banner"
+                    style="align-self: center;"
+                />
+            </div>
+            {% if user.is_authenticated %}
+            <div class="col-auto my-3">
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="btn btn-light" type="submit" value="logout">Logout</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        <h3 style="color: var(--bs-white); text-align: center">Terminvorlagen</h3>
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

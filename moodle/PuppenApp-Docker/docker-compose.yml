@@ -1,0 +1,35 @@
+version: '3'
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx_proxy-tier
+
+# Beschreibung des externen NFS Mount als volume
+volumes:
+  akte:
+    driver: local
+    driver_opts:
+      type: nfs4
+      o: addr=192.168.0.5,rw
+      device: ":/data/rubydemenz/akte"
+
+services:
+  # Konfiguration der Dienste, hier nur die akte, könnte aber auch eine DB
+  # enthalten, die werden dann alle zusammen gestartet in eigenen Kontainern
+  # und die Namensauflösung wird von docker übernommen.
+  akte:
+    # image can auch durch `build: akte` ersetzt werden, dann wird im
+    # Unterordner `akte` eine `Dockerfile` erwartet. Und wird dann beim deploy
+    # (starten) gebaut, wenn kein aktuelles Image existiert.
+    # Ansonsten manuell mit `docker-compose build`
+    image: akte:latest
+    restart: always
+    volumes:
+      - akte:/mnt
+    environment:
+      - VIRTUAL_HOST=puppenakte.ais-lab.de,puppenakte.ais-lab.eu
+      - VIRTUAL_PORT=80
+    networks:
+      - proxy-tier
+

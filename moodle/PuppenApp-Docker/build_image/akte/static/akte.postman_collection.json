@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "c9f52d64-787a-477e-8010-8287e8146435",
+		"name": "akte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get puppets/",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 0cfb77e6888a6729614db39dded0101fc4625a43",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ts.wintersections.de:8000/api/puppets/",
+					"protocol": "http",
+					"host": [
+						"ts",
+						"wintersections",
+						"de"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"puppets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth puppets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "user",
+							"description": "p",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ts.wintersections.de:8000/api-auth/?username=user&password=1",
+					"protocol": "http",
+					"host": [
+						"ts",
+						"wintersections",
+						"de"
+					],
+					"port": "8000",
+					"path": [
+						"api-auth",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit puppet",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Token 0cfb77e6888a6729614db39dded0101fc4625a43"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"shirt_name\": \"Lieschen2\",\r\n    \"last_edit\": \"2020-06-09T19:04:47.224800Z\",\r\n    \"serial\": \"123123\",\r\n    \"name\": \"Elisa\",\r\n    \"hair_color\": 3,\r\n    \"shirt_color\": 4,\r\n    \"pants_color\": 5,\r\n    \"handler\": 6,\r\n    \"shoe_color\":4,\r\n    \"connector\":\"usb\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ts.wintersections.de:8000/api/puppet/1/",
+					"protocol": "http",
+					"host": [
+						"ts",
+						"wintersections",
+						"de"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"puppet",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get issuedata",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Token 0cfb77e6888a6729614db39dded0101fc4625a43"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/S:/bilder/thebrain.jpg"
+						},
+						{
+							"key": "title",
+							"value": "asd",
+							"type": "text"
+						},
+						{
+							"key": "issue",
+							"value": "2",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ts.wintersections.de:8000/api/issuedata/",
+					"protocol": "http",
+					"host": [
+						"ts",
+						"wintersections",
+						"de"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"issuedata",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post issue data Copy",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Token 0cfb77e6888a6729614db39dded0101fc4625a43"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/S:/bilder/650 jahre dülken/opendoors2014ii-36.jpg"
+						},
+						{
+							"key": "title",
+							"value": "opendoors",
+							"type": "text"
+						},
+						{
+							"key": "issue",
+							"value": "3",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ts.wintersections.de:8000/api/issuedata/",
+					"protocol": "http",
+					"host": [
+						"ts",
+						"wintersections",
+						"de"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"issuedata",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

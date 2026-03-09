@@ -1,0 +1,54 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+<AudaFusion>
+<Auftrag>
+    <SYSNR>153274001</SYSNR>
+    <LFDNR>96841</LFDNR>
+    <AUNR>G202296540</AUNR>
+</Auftrag>
+<VorgangList>
+    <Vorgang>
+        <SYSNR>1532741</SYSNR>
+        <LFDNR>96841</LFDNR>
+        <LFDNRVG>1</LFDNRVG>
+        <VORGANGSARTTEXT>Kaskoschaden</VORGANGSARTTEXT>
+        <FZGART>37</FZGART>
+        <SCHADENTAG>21.02.2022</SCHADENTAG>
+        <VS_SCHADEN_NR>58-2411172-86</VS_SCHADEN_NR>
+        <VERSSCHEINNR>40-5698170-35</VERSSCHEINNR>
+        <STATUS>K7 A7 E7 J7</STATUS>
+    </Vorgang>
+</VorgangList>
+<FahrzeugList>
+    <Fahrzeug>
+        <SYSNR>153274001</SYSNR>
+        <LFDNR>96841</LFDNR>
+        <LFDNRVG>1</LFDNRVG>
+        <FABNAME>Yamaha</FABNAME><FZGIDENTNR>5Y4AMB7W0H0501305</FZGIDENTNR><AMTLKENNZ>TST-AS 123</AMTLKENNZ><TYPNAME>Quad (ATV)</TYPNAME><UTYPNAME>Grizzly</UTYPNAME></Fahrzeug></FahrzeugList>
+        <RechnungList>
+            <Rechnung>
+                <SYSNR>153274001</SYSNR>
+                <LFDNR>96841</LFDNR>
+                <LFDNRVG>1</LFDNRVG>
+                <LFDNRRG>1</LFDNRRG>
+                <RGNR>94352</RGNR>
+                <RECHNUNGSNUMMER>R20000002</RECHNUNGSNUMMER>
+                <RECHNUNGSDATUM>11.11.2021</RECHNUNGSDATUM>
+                <RECHNUNGSZEIT>16:33:57</RECHNUNGSZEIT>
+                <NETTO>2800</NETTO>
+                <PROZENT>0</PROZENT>
+                <PROZENTBETRAG>0</PROZENTBETRAG>
+                <NETTO_M_PROZENT>2800</NETTO_M_PROZENT>
+                <MWST>53,2</MWST>
+                <BRUTTO>333,2</BRUTTO>
+                <WG01></WG01><WG02></WG02><WG03></WG03><WG04>280</WG04><WG05></WG05><WG06></WG06><WG07></WG07><WG08></WG08><WG09></WG09><WG10></WG10><WG11></WG11><WG12></WG12><WG13></WG13><WG14></WG14><WG15></WG15><WG16></WG16><WG17></WG17><WG18></WG18><WG19></WG19><WG20></WG20>
+                <RESUCHWORT1>TestVers VERS.</RESUCHWORT1>
+                <RESUCHWORT2></RESUCHWORT2>
+            </Rechnung>
+        </RechnungList>
+        <RechnungList>
+            <Rechnung name="Rechnung.pdf" code="base64" type="pdf">JVB...UlRU9GCg==</Rechnung></RechnungList>
+        <GutachtenList>
+            <Gutachten name="Gutachten_50.pdf" code="base64" type="pdf">==</Gutachten>
+        </GutachtenList>
+</AudaFusion>
+

@@ -1,0 +1,12 @@
+FROM alpine:latest AS alpine
+RUN apk update && apk add apache2 && apk add bash && apk add python3
+COPY start.py /opt/start.py
+COPY index.html /var/www/localhost/htdocs/index.html
+RUN adduser -S www-data -G www-data -D -H
+RUN chown www-data:www-data /opt/start.py
+RUN rm /etc/apache2/conf.d/userdir.conf
+COPY httpd.conf /etc/apache2/httpd.conf
+COPY proxy.conf /etc/apache2/conf.d
+#RUN chown -R www-data:www-data /var/log/apache2
+#USER www-data
+CMD ["python","/opt/start.py"]

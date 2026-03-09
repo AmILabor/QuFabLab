@@ -1,0 +1,59 @@
+version: '2'
+services:
+  proxy:
+    image: reverse_proxy
+    #ports:
+    #    - '443:443'
+    environment:
+        - DEFAULT_HOST=moodle:8080
+        - API_HOST=api:8191
+        - GEN_CERTS=True
+  mariadb:
+    image: docker.io/bitnami/mariadb:10.6
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_moodle
+      - MARIADB_DATABASE=bitnami_moodle
+      - MARIADB_CHARACTER_SET=utf8mb4
+      - MARIADB_COLLATE=utf8mb4_unicode_ci
+    volumes:
+      - 'mariadb_data:/bitnami/mariadb'
+    #ports:
+      #- '3406:3306'
+  api:
+    build: api_docker
+    environment:
+      - GEN_CERTS=True
+      - DOMAIN=localhost
+      - VIRTUAL_PORT=443
+      - VIRTUALHOST=localhost
+    ports:
+      - "443:443"
+  moodle:
+    image: docker.io/bitnami/moodle:4
+    ports:
+      #- '8081:8080'
+      - '443:8443'
+    environment:
+      - MOODLE_DATABASE_HOST=mariadb
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+      - MOODLE_REVERSEPROXY=yes
+      - MOODLE_SSLPROXY=yes
+      - MOODLE_HOST=localhost
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'moodle_data:/bitnami/moodle'
+      - 'moodledata_data:/bitnami/moodledata'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+    driver: local
+  moodle_data:
+    driver: local
+  moodledata_data:
+    driver: local
