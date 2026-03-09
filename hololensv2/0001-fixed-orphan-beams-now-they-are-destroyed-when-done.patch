@@ -1,0 +1,25 @@
+From e89de535486945a58ce95153b3581b34ff2ebf14 Mon Sep 17 00:00:00 2001
+From: "marcus.weberskirch@hs-niederrhein.de"
+ <marcus.weberskirch@hs-niederrhein.de>
+Date: Mon, 29 Jul 2024 14:21:49 +0200
+Subject: [PATCH 1/2] fixed orphan beams, now they are destroyed when done.
+
+---
+ Assets/Scripts/GhostImaging/SPDCBrick.cs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Assets/Scripts/GhostImaging/SPDCBrick.cs b/Assets/Scripts/GhostImaging/SPDCBrick.cs
+index 0c87911..6b66a5d 100644
+--- a/Assets/Scripts/GhostImaging/SPDCBrick.cs
++++ b/Assets/Scripts/GhostImaging/SPDCBrick.cs
+@@ -45,6 +45,7 @@ namespace QuantenKoffer.Bricks
+                 }
+                 next_beam.Draw();
+             }
++            newBeam.DestroyWhenDone();
+             return beams;
+         }
+ 
+-- 
+2.39.1.windows.1
+

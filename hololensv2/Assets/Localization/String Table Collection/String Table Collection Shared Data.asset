@@ -1,0 +1,665 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: String Table Collection Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: String Table Collection
+  m_TableCollectionNameGuidString: 6937bfbdbd441ee49b31f7fe6dc19eff
+  m_Entries:
+  - m_Id: 2069193506816
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/ChooseInstructionDialog/Dialog_Info/Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2375289618432
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/Button
+      Options/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392997969920
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/Button
+      Description/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2451634339840
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/Button
+      Change type/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485956329472
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/ButtonRotateLeft/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506734911488
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/ButtonRotateRight/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528079724544
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Menu_Buttons/ButtonCollection/Button
+      Delete/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3157871247360
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3197780049920
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (1)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3253925003264
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (3)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3273197830144
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (4)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3294198710272
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (5)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3326599708672
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (6)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3350880534528
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (7)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3386104299520
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (8)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3413501493248
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (9)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3439925608448
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Types/ButtonParent/Menu
+      Button (10)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37150951948288
+    m_Key: Michelson-Interferometer Step 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37833151299584
+    m_Key: Michelson-Interferometer Step 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38101519646720
+    m_Key: Michelson-Interferometer Step 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38356667547648
+    m_Key: Michelson-Interferometer Step 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38557893476352
+    m_Key: Michelson-Interferometer Step 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38690097938432
+    m_Key: Michelson-Interferometer Step 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38806838001664
+    m_Key: Michelson-Interferometer Step 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51424176848896
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344409720438784
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/Menu Button Show Interference/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344498601934848
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/Menu Button Change Instruction/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344535763468288
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/Menu Button Show/Hide Instruction/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393580062130176
+    m_Key: Periskop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393856265437184
+    m_Key: Wellenplaetchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394081147240448
+    m_Key: Spiegel90
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394236940468224
+    m_Key: Spiegel45
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394411461263360
+    m_Key: Faeserkoppler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394557787947008
+    m_Key: Doppelspalt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394748213542912
+    m_Key: Kamera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394883165274112
+    m_Key: Strahlteiler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395085402030080
+    m_Key: Tunneleffekt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395782830899200
+    m_Key: Polfilter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 396403822772224
+    m_Key: Glaskeil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397216162988032
+    m_Key: Polfilter Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397488436232192
+    m_Key: Glaskeil Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397719022288896
+    m_Key: Tunneleffekt Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397908470611968
+    m_Key: Strahlteiler Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398119293108224
+    m_Key: Kamera Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398505773056000
+    m_Key: Doppelspalt Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398694114082816
+    m_Key: Faeserkoppler Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398906815627264
+    m_Key: Spiegel 45 Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399130992787456
+    m_Key: Array Detector Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399288329519104
+    m_Key: Periskop Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399433687318528
+    m_Key: Wellenplaetchen Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417130592550912
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/InstructionDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721971575472128
+    m_Key: Introduction Step 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722567162445824
+    m_Key: Introduction Step 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723949101727744
+    m_Key: Introduction Step 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724842039689216
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/ChooseInstructionDialog/Dialog_Info/ButtonParent/Button
+      Introduction/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 726109847764992
+    m_Key: Introduction Step 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751528865120256
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/InstructionDialog/Dialog_Info/ButtonParent/ButtonTwoA/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751580647997440
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/InstructionDialog/Dialog_Info/ButtonParent/ButtonTwoB/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 757002029187072
+    m_Key: Introduction Step 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759765064695808
+    m_Key: Introduction Step 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 768607148261376
+    m_Key: Introduction Step 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 770083404857344
+    m_Key: Introduction Step 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535753553494016
+    m_Key: Introduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535958873063424
+    m_Key: Michelson-Interferometer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10910647907467264
+    m_Key: Lightspeed Experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10914024884224000
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/ChooseInstructionDialog/Dialog_Info/ButtonParent/Button
+      Lichtgeschwindigkeitsexperiment (Wide)/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10914972402663424
+    m_Key: Lightspeed Experiment step 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915314049695744
+    m_Key: Lightspeed Experiment step 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915726567882752
+    m_Key: Lightspeed Experiment step 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916031611224064
+    m_Key: Lightspeed Experiment step 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916595493453824
+    m_Key: Lightspeed Experiment step 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916738875736064
+    m_Key: Lightspeed Experiment step 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919139057811456
+    m_Key: Lightspeed Experiment step 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919224722276352
+    m_Key: Lightspeed Experiment step 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13064302903377920
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/InstructionDialog/Dialog_Info/ButtonParent/Button
+      Middle/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088954237272064
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/Menu Button Clear Grid/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21089938293080064
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/DisplayDeckel/InterferenceUI/DescriptionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30065524533313536
+    m_Key: Introduction Step 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30076860289990656
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Options/Option
+      AmplitudeMultiplier/DescriptionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30141842495062016
+    m_Key: Quantenkoffer_FullAR/QR_Tracker/TrackerHolder/Quantenkoffer/Look-n-Feel
+      Quantenkoffer/BrickSpawnPosition/Quantenkoffer_Spielstein/Dialog/Dialog_Options/Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402482881937408
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/Backplate/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402739921469440
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonLoadDoppler/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402825418162176
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonKoffer
+      HalfAR/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402983535034368
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonKoffer
+      FullAR/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403411010109440
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Spaltbreite
+      +/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403561468182528
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Spaltbreite
+      -/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403608020762624
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Show/Hide
+      Curve/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403720579104768
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Spaltdistanz
+      +/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403779928506368
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Spaltdistanz
+      -/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403834353795072
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Show/Hide
+      Pattern/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403926813032448
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Wavelength
+      +/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403964855369728
+    m_Key: DopplerExperiment/InterferencePattern Menu/ButtonCollection/Button Wavelength
+      -/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60896770870554624
+    m_Key: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60900000543354880
+    m_Key: StartLaser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61285878347550720
+    m_Key: slower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286025177550848
+    m_Key: faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286132572704768
+    m_Key: default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286230761361408
+    m_Key: pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61296789305118720
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/SpeedText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297188091154432
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/SpeedText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297582041157632
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/ButtonPauseLaser/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297886602153984
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/ButtonSpeedNormal/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298018601095168
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/ButtonSpeedFaster/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298167398223872
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/Speed/ButtonSpeedSlower/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298295202861056
+    m_Key: refactortest/QR_Tracker (1)/TrackerHolder/Quantenkoffer/LaserSettings/ButtonStartLasers/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63742366419243008
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonKoffer
+      FullAR2/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64107083142778880
+    m_Key: Quantenkoffer_HalfARefactor/Trackers/UI Scenes Panel (1)/Panel Content/Backplate/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64127801585119232
+    m_Key: Quantenkoffer_HalfARefactor/Trackers/UI Scenes Panel (1)/Panel Content/ButtonCollection/TopRightIcon/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64536832232607744
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonLoadGhostImaging/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547612496146432
+    m_Key: Array DetectorName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547765789569024
+    m_Key: Array Detector Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548760351322112
+    m_Key: Bucket Detector Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548836503105536
+    m_Key: Bucket Detector Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298294739357696
+    m_Key: ResultDisplayName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298379942449152
+    m_Key: ResultDisplayDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987216793317376
+    m_Key: LaserPumpName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987467121963008
+    m_Key: LaserPumpDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987652657000448
+    m_Key: SPDCName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987853769682944
+    m_Key: SPDCDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67050784129626112
+    m_Key: GhostImagingExperiment/experiment/Controls/ButtonClear/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051135230619648
+    m_Key: GhostImagingExperiment/experiment/Controls/ButtonRasterLaser/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051233779986432
+    m_Key: GhostImagingExperiment/experiment/Controls/ButtonStartLasers/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67067834327707648
+    m_Key: GhostImagingExperiment/experiment/Controls/ButtonSwitchShape/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122084965511168
+    m_Key: ErrorHighlight/ErrorHighlight/ErrorDialog/DialogSmall/TitleText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122186312478720
+    m_Key: ErrorHighlight/ErrorHighlight/ErrorDialog/DialogSmall/Alignment/PlacementText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122296320684032
+    m_Key: ErrorHighlight/ErrorHighlight/ErrorDialog/DialogSmall/Alignment/RotationText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122413010415616
+    m_Key: ErrorHighlight/ErrorHighlight/ErrorDialog/DialogSmall/Alignment/TypeText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101515024518934528
+    m_Key: StartScene_LoadScenes/UI Scenes Panel/Panel Content/ButtonCollection/ButtonKoffer
+      HalfAR2/IconAndText/TextMeshPro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634469444562944
+    m_Key: "Introduction Step 8\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634953307860992
+    m_Key: Introduction Step 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112652329386586112
+    m_Key: 'MichelsonInterferrometer Step0.0
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112653070868230144
+    m_Key: 'MichelsonInterferrometer Step0.1
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112656296497721344
+    m_Key: Introduction Step 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647714762313728
+    m_Key: "ShowPositionSettings\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647896530866176
+    m_Key: HidePositionSettings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648197899997184
+    m_Key: Up-Down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648300962435072
+    m_Key: Left-Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648380092174336
+    m_Key: Forward-backward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648671055237120
+    m_Key: Positionseinstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159799728175841280
+    m_Key: Michelson-Interferometer AR Step 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159804122359398400
+    m_Key: Michelson-Interferometer AR Step 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159807282549358592
+    m_Key: Michelson-Interferometer AR Step 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160490863722496000
+    m_Key: Michelson-Interferometer Step 7
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4119801351312769054
+  references:
+    version: 2
+    RefIds:
+    - rid: 4119801351312769054
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1698142565653

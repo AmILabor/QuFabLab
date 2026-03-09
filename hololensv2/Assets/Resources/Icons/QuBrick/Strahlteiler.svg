@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="65.616692mm"
+   height="65.667198mm"
+   viewBox="0 0 65.616693 65.667197"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   sodipodi:docname="AlleIcons.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.47748556"
+     inkscape:cx="783.26976"
+     inkscape:cy="594.78238"
+     inkscape:window-width="1920"
+     inkscape:window-height="1173"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs2" /><g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-66.654062,0.0059223)"><g
+       id="g1077"
+       transform="translate(-268.15861,-7.5973233)"
+       inkscape:export-filename="Strahlteiler.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><path
+         style="fill:#00aced;stroke-width:0.264583"
+         d="m 344.67225,72.850722 c -4.5333,-1.220875 -8.27278,-4.988248 -9.45445,-9.52499 -0.32825,-1.260258 -0.40513,-3.402409 -0.40513,-11.289387 v -9.733994 h 8.06979 8.0698 l 0.004,7.077604 c 0.002,3.892682 0.094,7.218984 0.20382,7.391781 0.46407,0.72984 1.84845,0.876448 8.27602,0.876448 h 6.59736 v 7.805208 7.805209 l -9.98802,-0.01741 c -7.71897,-0.01347 -10.30271,-0.102163 -11.37324,-0.390467 z m 24.80084,-7.39733 v -7.805208 h 6.15071 6.1507 L 366.42953,42.30121 351.08455,26.954234 l -0.0711,5.954268 -0.0711,5.954266 h -8.06482 -8.06483 v -9.866287 c 0,-7.891947 0.079,-10.169501 0.39467,-11.381528 1.20354,-4.620704 4.94191,-8.370709 9.5382,-9.567891 2.33254,-0.607548 43.41839,-0.607548 45.75093,0 3.42728,0.892694 6.91046,3.645904 8.44586,6.67586 1.40109,2.764932 1.48701,3.589616 1.48701,14.273559 v 9.866287 h -7.80521 -7.80521 v -7.14375 c 0,-6.790973 -0.0261,-7.169882 -0.52916,-7.672917 -0.51674,-0.516733 -0.88195,-0.529167 -15.54343,-0.529167 h -15.01425 l 15.47728,15.47925 15.47727,15.479246 0.071,-6.086538 0.071,-6.086541 h 7.80033 7.80033 v 9.733994 c 0,10.712405 -0.0879,11.489441 -1.62548,14.374286 -0.99296,1.862984 -3.59129,4.41629 -5.45551,5.360958 -2.75999,1.398593 -3.60084,1.487012 -14.14127,1.487012 h -9.73399 z"
+         id="path390" /><path
+         style="fill:#fc0001;stroke-width:0.264583"
+         d="m 366.03351,65.453392 v -7.805208 h 1.71979 1.71979 v 7.805208 7.805209 h -1.71979 -1.71979 z M 334.81267,40.582559 v -1.719791 h 8.06979 8.0698 v 1.719791 1.719792 h -8.0698 -8.06979 z m 50.00625,0 v -1.719791 h 7.80521 7.80521 v 1.719791 1.719792 h -7.80521 -7.80521 z"
+         id="path388" /></g></g></svg>

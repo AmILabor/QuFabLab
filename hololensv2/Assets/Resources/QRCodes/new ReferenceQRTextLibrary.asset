@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a384337e368e04798dc8d56d943484, type: 3}
+  m_Name: new ReferenceQRTextLibrary
+  m_EditorClassIdentifier: 
+  QRContentPrefabs:
+  - QRText: KOFFER_TOPLEFT
+    Prefab: {fileID: 2871525465254913617, guid: 69043d89b00cf2c4985c09dca67acacd,
+      type: 3}
+  - QRText: KOFFER_TOPRIGHT
+    Prefab: {fileID: 2871525465254913617, guid: 032ce3ca6f937e748ac2832754e9d72a,
+      type: 3}
+  - QRText: KOFFER_BOTTOMLEFT
+    Prefab: {fileID: 2871525465254913617, guid: 8afc70d5ba8746747ac605abddb67362,
+      type: 3}
+  - QRText: KOFFER_BOTTOMRIGHT
+    Prefab: {fileID: 2871525465254913617, guid: ba51b707b480cd74ebbba18343c82348,
+      type: 3}

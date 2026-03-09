@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f42e646cfa3df4aab1ac0dd6a2801f, type: 3}
+  m_Name: Michelson-Interferometer 6x5
+  m_EditorClassIdentifier: 
+  instructionName:
+    m_TableReference:
+      m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+    m_TableEntryReference:
+      m_KeyId: 2535958873063424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  statement:
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 112652329386586112
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: -1, y: -1}
+      type: {fileID: 0}
+      dontCheckForCompletion: 0
+      rotation: 0
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 112653070868230144
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights: []
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 159799728175841280
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: 2, y: 0}
+      type: {fileID: 11400000, guid: 6c26cfc7d1b03234cbc657a76dcd2b50, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 0
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 38356667547648
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: 2, y: 2}
+      type: {fileID: 11400000, guid: 63bea643552a93b42ac55f63301d89e7, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 1
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 38557893476352
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: 2, y: 4}
+      type: {fileID: 11400000, guid: 3f12951613a5a004c8ba52b8956844cd, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 2
+    - position: {x: 0, y: 2}
+      type: {fileID: 11400000, guid: 3f12951613a5a004c8ba52b8956844cd, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 3
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 38690097938432
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: 4, y: 2}
+      type: {fileID: 11400000, guid: 6c26cfc7d1b03234cbc657a76dcd2b50, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 1
+    - position: {x: 4, y: 0}
+      type: {fileID: 11400000, guid: 6c26cfc7d1b03234cbc657a76dcd2b50, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 3
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 159807282549358592
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: -100, y: -100}
+      type: {fileID: 11400000, guid: 33aaf083927c3774da265c44d4df5bbb, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 0
+  - description:
+      m_TableReference:
+        m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+      m_TableEntryReference:
+        m_KeyId: 159804122359398400
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    highlights:
+    - position: {x: 2, y: 4}
+      type: {fileID: 11400000, guid: 3f12951613a5a004c8ba52b8956844cd, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 2
+    - position: {x: 0, y: 2}
+      type: {fileID: 11400000, guid: 3f12951613a5a004c8ba52b8956844cd, type: 2}
+      dontCheckForCompletion: 0
+      rotation: 3
+  references:
+    version: 2
+    RefIds: []

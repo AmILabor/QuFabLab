@@ -1,0 +1,741 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String Table Collection_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 6937bfbdbd441ee49b31f7fe6dc19eff, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 2599362721245822978
+  m_TableData:
+  - m_Id: 2069193506816
+    m_Localized: Experimentauswahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2375289618432
+    m_Localized: Optionen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392997969920
+    m_Localized: Beschreibung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2451634339840
+    m_Localized: "Typ \xE4ndern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485956329472
+    m_Localized: Links drehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506734911488
+    m_Localized: Rechts drehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528079724544
+    m_Localized: "L\xF6schen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3157871247360
+    m_Localized: Faserkoppler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3197780049920
+    m_Localized: Kamera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3253925003264
+    m_Localized: "45\xB0 Spiegel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3273197830144
+    m_Localized: "90\xB0 Spiegel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3294198710272
+    m_Localized: Strahlteiler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3326599708672
+    m_Localized: "Wellenpl\xE4ttchen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3350880534528
+    m_Localized: Doppelspalt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3386104299520
+    m_Localized: Tunneleffekt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3413501493248
+    m_Localized: Polfilter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3439925608448
+    m_Localized: Glaskeil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37150951948288
+    m_Localized: 'Erstelle ein Periskop in der linken oberen Ecke des Spielfeldes.
+
+
+      Ein
+      Periskop verschiebt den Strahlgang parallel und wird daher eingesetzt um den
+      laser aus dem Quantenkoffer aufs Spielfeld zu reflektieren.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37833151299584
+    m_Localized: "Erstelle ein Periskop in der rechten oberen Ecke des Spielfeldes.\n\nDieses
+      Periskop leitet den Strahlgang wieder parallel in den Quantenkoffer zur\xFCck
+      um ihn dem Detektor zuzuf\xFChren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38101519646720
+    m_Localized: "Dr\xFCcke das + auf der rechten Seite des Koffers, um einen neuen
+      QuBrick zu erstellen und platziere ihn an der markierten Stelle, um den Strahl
+      nach unten umzulenken und \xE4ndere den Typ zum 45\xB0 Spiegel.  \n\nTippe
+      auf das Symbol des QuBricks an seiner Oberseite, um das Einstellungsmen\xFC
+      zu \xF6ffnen. W\xE4hle dort die Option \u201ETyp \xE4ndern\u201C und setze
+      den QuBrick auf \u201E45\xB0-Spiegel\u201C. Schlie\xDFe anschlie\xDFend das
+      Men\xFC."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38356667547648
+    m_Localized: "Platziere einen neuen QuBrick an der markierten Stelle und \xE4ndere
+      den Typ zum Strahlteiler. \n\nDer Strahlteiler nutzt einen halbdurchl\xE4ssigen
+      Spiegel um einen Teil des Lichtes um 90\xB0 zu reflektieren und das restliche
+      Licht durch den Spiegel durchzulassen. Dieses Bauteil ist integral f\xFCr den
+      Aufbau eines Michelson Interferrometers."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38557893476352
+    m_Localized: "Platziere zwei neue QuBricks an der markierten Stelle und \xE4ndere
+      den Typen zum 90\xB0 Spiegel. \n\nDie 90\xB0 Spiegel bilden die Arme des Michelson
+      Interferometers und werfen die Strahlen direkt zur\xFCck zum Strahlteiler.
+      \nDurch Verschiebung dieser Spiegel ergeben sich unterschiedliche Inteferenzmuster
+      am Detektor. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38690097938432
+    m_Localized: "Platziere zwei weitere QuBricks mit dem Typ 45\xB0 Spiegel.\n\nRotiere
+      die Spiegel derart, dass Sie den Strahl ins rechte Periskop zur\xFCckleiten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38806838001664
+    m_Localized: "Perfekt, der Versuchsaufbau ist erfolgreich abgeschlossen. \nAuf
+      der Linken Seite unter dem Periskop kann nun ein Laserstrahl abgefuert werden.
+      \nRechts hinter dem Strahlteiler sind dann die Interferierten Wellen zu sehen.
+      \nDie Wegstrecke kann \xFCber die Optionen des 90\xB0 Spiegels beeinflusst
+      werden. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51424176848896
+    m_Localized: de
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344409720438784
+    m_Localized: Interferenzmuster anzeigen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344498601934848
+    m_Localized: Anleitung wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344535763468288
+    m_Localized: Anleitung anzeigen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393580062130176
+    m_Localized: "Das Periskop Leitet den Laser aus der Lichtquelle auf\ndie Oberfl\xE4che.
+      Es kann ebenso genutzt werden um \nden Laser wieder zur\xFCck in den Koffer
+      zu reflektieren \nund der Detektor-Einheit zuzur\xFChren.\nLinks sind sie mit
+      der Quelle verbunden. \nRechts hingegen mit dem Detektor.\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393856265437184
+    m_Localized: "\rVerlustfreie Polarisationsmanipulation\r\n\u03BB/2 oder \u03BB/4
+      Pl\xE4ttchen integriert\r\nF\xFCr erweiterte Polarisationsexperimente wie Quantenkryptographie
+      & Tomographie\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394081147240448
+    m_Localized: "Reflektiert den eingehenden Strahl am Spiegel \nzur\xFCck in die
+      Richtung aus der der Strahl kam. \nDer Spiegelabstand l\xE4sst sich im Wellenl\xE4ngen-\nbereich
+      des Lichts einstellen, sodass der zur\xFCck-\ngelegte Weg des Laserstrahls
+      manipuliert werden kann."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394236940468224
+    m_Localized: "Der im 45\xB0 Winkel platzierte Spiegel reflektiert den \nStrahl
+      um 90\xB0."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394411461263360
+    m_Localized: "\rKoppelt den Strahl in optische Fasern\r\nEffiziente, automatische
+      Faserkopplung m\xF6glich\r\nErm\xF6glicht Anschluss weiterer Detektoren und
+      Kombination mit externen Aufbauten\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394557787947008
+    m_Localized: "\rKlassiker f\xFCr Interferenzerscheinungen\r\nVerschiedene Spaltbreiten,
+      Gitter, Einzelspalte\r\nSpezialstein f\xFCr Doppelspaltexperimente mit Einzelphotonen
+      oder hellem Licht\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394748213542912
+    m_Localized: "\rVermessung des Laserstrahls\r\nAnsicht \xFCber Kofferdisplay
+      & externe Ger\xE4te\r\nStrahljustage, Interferenzerscheinungen mit hellem Licht\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394883165274112
+    m_Localized: "Ein im 45\xB0 Winkel platzierter, halbdurchl\xE4ssiger Spiegel.
+      \nDer eingehende Strahl wird zur h\xE4lfte geradeaus durchgelassen und zur
+      anderen H\xE4lfte im 90\xB0 Winkel umgeleitet. \nWird h\xE4ufig f\xFCr die
+      Interferometrie oder Quantenradierer eingesetzt. "
+    m_Metadata:
+      m_Items:
+      - rid: 2599362721245822978
+  - m_Id: 395085402030080
+    m_Localized: "Abstandsabh\xE4ngige Prismen\xFCbertragung\nSteuerung \xFCber Quantenkoffer
+      & externe Ger\xE4te\nSpezielles Token f\xFCr den Tunneleffekt basierend auf
+      der\ntotalen inneren Reflexion"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395782830899200
+    m_Localized: "Die Polarisation einer Elektromagnetischen\nWelle bezieht sich
+      auf die\nSchwingungsrichtung seines elektrischen\nFeldes. Dieser Token ist
+      eine Art Filter\nder nur das Licht einer gewissen Polarisierung durchl\xE4sst."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 396403822772224
+    m_Localized: "\xC4ndert die optische Pfadl\xE4nge\nOffset \u03BCm-genau einstellbar\nSpezieller
+      Token f\xFCr Interferenzexperimente,\nHong-Ou-Mandel-Effekt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397216162988032
+    m_Localized: Polfilter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397488436232192
+    m_Localized: Glaskeil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397719022288896
+    m_Localized: Tunneleffekt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397908470611968
+    m_Localized: Strahlteiler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398119293108224
+    m_Localized: Kamera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398505773056000
+    m_Localized: Doppelspalt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398694114082816
+    m_Localized: Faeserkoppler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398906815627264
+    m_Localized: "Spiegel 45\xB0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399130992787456
+    m_Localized: "Spiegel 90\xB0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399288329519104
+    m_Localized: Periskop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399433687318528
+    m_Localized: Wellenplaetchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417130592550912
+    m_Localized: Stefan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721971575472128
+    m_Localized: "Hallo, dies ist eine Einf\xFChrung in die Bedienung des virtuellen
+      Quantenkoffers.\nTippe auf Weiter unter diesem Text um mit der Einf\xFChrung
+      zu beginnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722567162445824
+    m_Localized: "Dr\xFCcke auf den markierten Knopf am linken Rand des Quantenkoffers
+      um ein Periskop an dieser Stelle zu erstellen.\nEin Periskop auf der linken
+      Seite des Koffers wird eingesetzt um den laser aus dem Quantenkoffer aufs Spielfeld
+      zu reflektieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723949101727744
+    m_Localized: "Dr\xFCcke auf den markierten Knopf am rechten Rand des Quantenkoffers
+      um ein Periskop an dieser Stelle zu erstellen.\r\nEin Periskop auf der rechten
+      Seite des Koffers wird eingesetzt um den laser wieder zur\xFCck vom Spielfeld
+      zum Quantenkoffer zu reflektieren.\nNun wird der weg des Lasers vom Eingang
+      zum Ausgang visuell angezeigt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724842039689216
+    m_Localized: "Einf\xFChrung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 726109847764992
+    m_Localized: "Erstelle einen neuen QuBrick indem du auf das + Zeichen in der
+      rechten mitte des Quantenkoffers dr\xFCckst.\r\nEin neu erstellter QuBrick
+      ist standartm\xE4\xDFig vom Typ \"45\xB0 Spiegel\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751528865120256
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751580647997440
+    m_Localized: Weiter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 757002029187072
+    m_Localized: "Platziere den neu erstellten QUBrick auf dem markierten Feld indem
+      du ihn mit den Fingern aufnimmst und \xFCber das Feld ziehst bis du diesen
+      \xFCber das markierte Feld h\xE4ltst.\r\nJetzt lasse den QUBrick auf das markierte
+      Feld fallen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759765064695808
+    m_Localized: "Erstelle einen neuen QuBrick und platziere ihn auf dem markierten
+      Feld.\r\nDer QuBrick kann \xFCber das Men\xFC des QuBricks gedreht werden.\r\nUm
+      das Men\xFC aufzurufen, tippe oben auf dem gerade platzierten Baustein auf
+      das Symbol.\r\nTippe dort in der unteren Men\xFCleiste 2x auf den Button \"Links
+      drehen\" oder \"Rechts drehen\" um den Spielstein um 180\xB0 zu drehen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 768607148261376
+    m_Localized: "Erstelle einen neuen QuBrick und platziere ihn auf dem markierten
+      Feld.\r\nDer Typ des QuBricks kann \xFCber das Men\xFC des QuBricks ge\xE4ndert
+      werden.\r\nRufe das Men\xFC des platzierten Bausteins auf und wechsele zur
+      Kategorie \"Type \xE4ndern\". \xC4ndere den Typ des QuBricks zu \"Strahlteiler\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 770083404857344
+    m_Localized: "Herzlichen Gl\xFCckwunsch, sie wissen nun wie sie den virtuellen
+      Quantenkoffer bedienen k\xF6nnen.\r\n\r\n\xDCber den Schalter \"Interferenzmuster
+      anzeigen\" auf der rechten Seite des Deckels kann jetzt der eingehende Laser
+      angezeigt werden.\r\n\r\nFalls sich mehrere Laser dort \xFCberlagern wird dort
+      auch das Interferenzmuster angezeigt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535753553494016
+    m_Localized: "Einf\xFChrung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535958873063424
+    m_Localized: Michelson-Interferometer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10910647907467264
+    m_Localized: Lichtgeschwindigkeitsexperiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10914024884224000
+    m_Localized: Lichtgeschwindigkeitsexperiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915314049695744
+    m_Localized: "Erstellen Sie an der markierten Position einen Strahlteiler.\n\nDer
+      Strahlteiler l\xE4sst einen Teil des Lichts durch, reflektiert aber einen anderen
+      Teil auf das Spielbrett"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915726567882752
+    m_Localized: "Erstellen Sie an der markierten Position einen Strahlteiler.\n\nDer
+      zweite Strahlteiler l\xE4sst ebenfalls einen Teil des Lichts vom ersten Strahlteiler
+      durch, nimmt aber auch Licht vom darunter liegenden Spielbrett auf und reflektiert
+      es ebenfalls zum Periskop rechts davon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916031611224064
+    m_Localized: "Erstellen Sie an der markierten Position einen 45\xB0-Spiegel.\n\nDer
+      Spiegel reflektiert das vom ersten Strahlteiler kommende Licht auf die rechte
+      Seite des Spielbretts"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916595493453824
+    m_Localized: "Erstellen Sie an der markierten Position einen 45\xB0-Spiegel.\n\nDer
+      Spiegel reflektiert das vom ersten Spiegel kommende Licht zur\xFCck zum zweiten
+      Strahlteiler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916738875736064
+    m_Localized: "Sie k\xF6nnen jetzt die Lichtgeschwindigkeit messen, da Sie den
+      Versatz der Interferenz sowie die zus\xE4tzliche Distanz kennen, die der zweite
+      Strahl entlang der Spiegel im Vergleich zum ungehinderten Strahl am unteren
+      Rand des Spielbretts zur\xFCcklegen muss"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919139057811456
+    m_Localized: 'Erstelle ein Periskop in der linken unteren Ecke des Spielfeldes.
+
+
+      Ein
+      Periskop verschiebt den Strahlgang parallel und wird daher eingesetzt um den
+      laser aus dem Quantenkoffer aufs Spielfeld zu reflektieren.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919224722276352
+    m_Localized: "Erstelle ein Periskop in der rechten unteren Ecke des Spielfeldes.\n\nDieses
+      Periskop leitet den Strahlgang wieder parallel in den Quantenkoffer zur\xFCck
+      um ihn dem Detektor zuzuf\xFChren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13064302903377920
+    m_Localized: Automatisch aufbauen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088954237272064
+    m_Localized: Feld leeren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21089938293080064
+    m_Localized: Interferenz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30065524533313536
+    m_Localized: "Erstelle einen neuen Baustein und \xE4ndere diesen zu \"Spiegel
+      45\xB0\"\nplatziere diesen so dass der Strahl welcher vom Strahlteiler nach
+      oben reflektiert wird in das periskop an der oberen rechten Seite des Spielfelds
+      reflektiert wird.\n\nHierdurch wird der Strahl zur\xFCck in das Periskop geleitet
+      so dass dieser gemessen werden kann."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30076860289990656
+    m_Localized: Spiegel Feineinstellung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30141842495062016
+    m_Localized: Optionen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402482881937408
+    m_Localized: Anwendungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402739921469440
+    m_Localized: Doppelspalt Experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402825418162176
+    m_Localized: Unten links scannen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402983535034368
+    m_Localized: Quantenkoffer FullAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403411010109440
+    m_Localized: "Spaltbreite erh\xF6hen "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403561468182528
+    m_Localized: Spaltbreite verringeren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403608020762624
+    m_Localized: 'Kurve anzeigen
+
+      an/aus'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403720579104768
+    m_Localized: "Spaltdistanz erh\xF6hen\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403779928506368
+    m_Localized: Spaltdistanz verringern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403834353795072
+    m_Localized: 'Interferenz anzeigen
+
+      an/aus'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403926813032448
+    m_Localized: "Wellenl\xE4nge erh\xF6hen\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403964855369728
+    m_Localized: "Wellenl\xE4nge verringeren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60896770870554624
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60900000543354880
+    m_Localized: Laser starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61285878347550720
+    m_Localized: Langsamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286025177550848
+    m_Localized: Schneller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286132572704768
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286230761361408
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61296789305118720
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297188091154432
+    m_Localized: Geschwindigkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297582041157632
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297886602153984
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298018601095168
+    m_Localized: Schneller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298167398223872
+    m_Localized: Langsamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298295202861056
+    m_Localized: Laser Rastern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63742366419243008
+    m_Localized: AR-Quantenkoffer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64107083142778880
+    m_Localized: QRCodes Scannen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64127801585119232
+    m_Localized: Oben rechts scannen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64536832232607744
+    m_Localized: GhostImaging Experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547612496146432
+    m_Localized: Raster-Detektor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547765789569024
+    m_Localized: "Ein Array-Detektor besteht aus einer Anordnung von Sensoren oder
+      Pixeln, die die Intensit\xE4t des Lichts oder anderer Strahlung messen, die
+      vom Objekt reflektiert oder durchgelassen wird."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548760351322112
+    m_Localized: Bucket-Detektor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548836503105536
+    m_Localized: "Ein Bucket-Detector (engl. Eimer) ist ein einzelner Sensor, der
+      die intensit\xE4t des eintreffenden Lichts misst."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298294739357696
+    m_Localized: Ergebnisbild
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298379942449152
+    m_Localized: Wenn der Raster-Detektor genau dann ausgelesen wird, wenn der Bucket-Detektor
+      ein einkommendes Photo registriert, kann ein ein Schattenbild des Objekts vor
+      dem Bucket-Detektor erstellt werden.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987216793317376
+    m_Localized: Laser Pumpe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987467121963008
+    m_Localized: "Diese Pumpen liefern die Energie, die ben\xF6tigt wird, um ein
+      Lasermedium zu stimulieren und die Emission von Laserlicht zu erzeugen. Oft
+      handelt es sich dabei um Hochleistungslampen, Laserdioden oder andere Lichtquellen,
+      die die notwendige Energie liefern, um die Laseraktivit\xE4t zu initiieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987652657000448
+    m_Localized: Spontaneous Parametric Down-Conversion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987853769682944
+    m_Localized: Es wird ein Photon in zwei Photonen eines niedrigeren Energieniveaus
+      aufgespalten, wenn sie durch ein nichtlineares Kristallmaterial propagiert
+      werden.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67050784129626112
+    m_Localized: Ergebnis Leeren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051135230619648
+    m_Localized: Laser rastern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051233779986432
+    m_Localized: Laser starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67067834327707648
+    m_Localized: "Form \xE4ndern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122084965511168
+    m_Localized: Fehler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122186312478720
+    m_Localized: Falsch platziert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122296320684032
+    m_Localized: Falsche Rotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122413010415616
+    m_Localized: Falscher Typ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101515024518934528
+    m_Localized: Virtueller Quantenkoffer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634469444562944
+    m_Localized: "Bitte erstelle jetzt einen neuen QuBrick vom Typ 90\xB0 Spiegel
+      und platziere ihn an dieser Position."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634953307860992
+    m_Localized: "Nun \xF6ffne den Bausteindialog indem du auf den Baustein tippst.
+      W\xE4hle dort unten Links die Optionen um den Abstand des 90\xB0 spiegels zu
+      variieren. Dadurch kannst du die Wegstrecke des Lasers zu diesem Spiegel in
+      der Gr\xF6\xDFenordnung der Wellenl\xE4nge (lambda) variieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112652329386586112
+    m_Localized: "Du wirst nun durch den Aufbau Michelson Interferrometers geleitet.
+      \nEs wird genutzt um besonders kleine Wegstreckenunterschiede zu messen.\nEs
+      nutzt den Effekt der Intefferenz von Licht daf\xFCr. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112653070868230144
+    m_Localized: "Treffen zwei Lichtwellen aufeinander \xFCberlagern sich diese.
+      \nDas f\xFChrt dazu dass die Wellen sich beeinflussen und ihr Wellencharakter
+      ver\xE4ndert sich. \nDiese \xDCberlagerung ist abh\xE4ngig von der Wegstrecke,
+      die die Wellen relativ zueinander zur\xFCckgelegt haben.\nBei gleicher Strecke
+      zum Beispielt verst\xE4rkt sich die Welle, da die Wellenberge der ersten Lichtwelle
+      genau auf die Wellenberge der zweiten Lichtwelle treffen. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112656296497721344
+    m_Localized: "Nun kannst du auf der Linken Seite des Koffers den Knopf \"Laser
+      Starten\" dr\xFCcken. \nWenn alles geklappt hat siehst du einen roten Strahl,
+      der deinem Aufbau \xFCber das Spiefeld folgt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647714762313728
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647896530866176
+    m_Localized: "Schlie\xDFen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648197899997184
+    m_Localized: Hoch/Runter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648300962435072
+    m_Localized: Links/Rechts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648380092174336
+    m_Localized: "Vor/Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648671055237120
+    m_Localized: AR Positinoseinstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159799728175841280
+    m_Localized: "Platziere einen neuen QuBrick und \xE4ndere seinen Typ auf 45\xB0-Spiegel.\r\n\r\nDrehe
+      dazu den Drehknopf, bis das Symbol f\xFCr den 45\xB0-Spiegel auf dem Display
+      erscheint. Falls das Symbolauf dem QuBrick sich nicht \xE4ndert, dr\xFCcke
+      den Drehknopf einmal hinein."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159804122359398400
+    m_Localized: "Dr\xFCcke den Drehknopf an der Seite, bis die Pfeile auf dem Display
+      nicht mehr das Spiegelsymbol, sondern die Zahl darunter markieren. Diese Zahl
+      gibt den Phasenversatz der Wellen an. \n\nSind die Zahlen bei beiden Spiegeln
+      gleich, entsteht konstruktive Interferenz, da die Abst\xE4nde identisch sind.
+      Eine Differenz von 0,5, zum Beispiel 0,5 bei einem und 0 beim anderen, f\xFChrt
+      zu destruktiver Interferenz, da ein Spiegel um eine halbe Wellenl\xE4nge versetzt
+      ist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159807282549358592
+    m_Localized: "Perfekt, sie haben den Versuchsaufbau erfolgreich abgeschlossen.
+      \nSie k\xF6nnen nun mittels des roten Buttons einen Laserstrahl abfeuern. \nRechts
+      hinter dem Strahlteiler sehen sie dann die Interferierten Wellen. \nSie k\xF6nnen
+      dann versuchen die Wegstrecke des 90\xB0 Spiegels zu beeinflussen und eine
+      neue Lichtwelle auszul\xF6sen. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160490863722496000
+    m_Localized: "Tippe auf das Symbol des QuBricks an seiner Oberseite, um das Einstellungsmen\xFC
+      zu \xF6ffnen. Dr\xFCcke dort die Button \u201EOptionen\u201C und setzte den
+      Schieberegler auf <sprite=\"lambda2\" index=0>. Schlie\xDFe anschlie\xDFend
+      das Men\xFC.\n "
+    m_Metadata:
+      m_Items:
+      - rid: 2599362721245822978
+  references:
+    version: 2
+    RefIds:
+    - rid: 2599362721245822978
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0040cbe6246701000000e019972d3a02

@@ -1,0 +1,776 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String Table Collection_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6937bfbdbd441ee49b31f7fe6dc19eff, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 4119801351312769101
+  m_TableData:
+  - m_Id: 2069193506816
+    m_Localized: Experiment selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2375289618432
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392997969920
+    m_Localized: Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2451634339840
+    m_Localized: Change type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485956329472
+    m_Localized: Rotate left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506734911488
+    m_Localized: Rotate right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528079724544
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3157871247360
+    m_Localized: Fiber coupler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3197780049920
+    m_Localized: Camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3253925003264
+    m_Localized: "45\xB0 Mirror"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3273197830144
+    m_Localized: "90\xB0 Mirror"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3294198710272
+    m_Localized: Beam splitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3326599708672
+    m_Localized: Waveplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3350880534528
+    m_Localized: Double slit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3386104299520
+    m_Localized: Tunnel effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3413501493248
+    m_Localized: Polarizer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3439925608448
+    m_Localized: Glass wedge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37150951948288
+    m_Localized: 'Create a periscope in the top left corner of the board.
+
+
+      A
+      periscope shifts the beam path parallel and is therefore used to reflect the
+      laser from the quantum case onto the playing field.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37833151299584
+    m_Localized: 'Create a periscope in the top right corner of the board.
+
+
+      This
+      periscope guides the beam path back into the quantum case in parallel to feed
+      it to the detector.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38101519646720
+    m_Localized: "Create a new QuBrick and change the type to 45\xB0 mirror. Place
+      the QuBrick at the marked location.\n\nTap the QuBrick's icon on its top to
+      open the settings menu. Select \"Change Type\" and set the QuBrick to \"45\xB0
+      Mirror.\" Then, close the menu.\n\nPlace the QuBrick at the marked location
+      to redirect the beam downwards."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38356667547648
+    m_Localized: "Place a new QuBrick at the marked location and change the type
+      to beamsplitter. \n\nThe beam splitter uses a semi-transparent mirror to reflect
+      some of the light at 90\xB0 and allow the remaining light to pass through the
+      mirror. This component is integral to the construction of a Michelson interferrometer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38557893476352
+    m_Localized: "Place two new QuBricks at the marked location and change the type
+      to 90\xB0 mirror.\n\nThe 90\xB0 mirrors form the arms of the Michelson interferometer
+      and reflect the beams directly back to the beam splitter.\nShifting these mirrors
+      results in different interference patterns on the detector."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38690097938432
+    m_Localized: "Place two more QuBricks with the 45\xB0 mirror type.\n\nRotate
+      the mirrors so that you direct the beam back into the right periscope."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38806838001664
+    m_Localized: 'Perfect, you have successfully completed the experimental setup.
+
+
+      In
+      a real experiment, the interference pattern of the two superimposed light beams
+      would now be displayed.
+
+      We are currently working on the visualization.
+      Hopefully they enjoyed their trip to the learning environment.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51424176848896
+    m_Localized: en
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344409720438784
+    m_Localized: Show Interference-pattern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344498601934848
+    m_Localized: Change Instruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344535763468288
+    m_Localized: Show Instruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393580062130176
+    m_Localized: "The periscope directs the laser from the light source onto\nthe
+      surface. It can also be used to \nto reflect the laser back into the case \nand
+      feed it to the detector unit.\nOn the left they are connected to the source.
+      \nOn the right, they are connected to the detector."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393856265437184
+    m_Localized: "Lossless polarization manipulation\r\n\u03BB/2 or \u03BB/4 integrated
+      plates\r\nFor advanced polarization experiments such as quantum cryptography
+      & tomography\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394081147240448
+    m_Localized: "Reflects the incoming beam in the direction \ndirection from which
+      the beam came. The mirror \ndistance can be adjustable in the wavelength range
+      \nof the light, so that the the path travelled by the laser \nbeam can be manipulated."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394236940468224
+    m_Localized: "The mirror positioned at a 45\xB0 angle reflects the beam \nbeam
+      by 90\xB0."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394411461263360
+    m_Localized: "\rCouples the beam into optical fibers\r\nEfficient, automatic
+      fiber coupling possible\r\nEnables the connection of further detectors and
+      the combination with external setups\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394557787947008
+    m_Localized: "A classic for interference phenomena\r\nDifferent slit widths,
+      grids, individual slits\r\nSpecial token for double-slit experiments with single
+      photons or bright light\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394748213542912
+    m_Localized: "\rMeasurement of the laser beam\r\nView via display & external
+      devices\r\nBeam adjustment, interference phenomena with bright light\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394883165274112
+    m_Localized: "A semi-transparent mirror positioned at a 45\xB0 angle. \nHalf
+      of the incoming beam is transmitted straight ahead and the other half is deflected
+      at a 90\xB0 angle. \nOften used for interferometry or quantum erasers. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395085402030080
+    m_Localized: 'Distance-dependent prism transmission
+
+      Controlled via Quantenkoffer
+      & external devices
+
+      Special token for the tunnel effect based on the
+
+      frustrated
+      total internal reflection'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395782830899200
+    m_Localized: "The polarization of an electro-\r\nmagnetic  wave  refers  to 
+      the  di-\r\nrection of oscillation of its electric \r\nfield. This token is
+      a type of filter \r\nthat transmits only the light of a \r\ncertain polarization."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 396403822772224
+    m_Localized: "Changes the optical path length\r\nOffset adjustable with \u03BCm
+      accuracy\r\nSpecial token for interference experiments,\r\nHong-Ou-Mandel effect"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397216162988032
+    m_Localized: Polarizer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397488436232192
+    m_Localized: Glass Wedge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397719022288896
+    m_Localized: Tunnel effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397908470611968
+    m_Localized: Beam Splitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398119293108224
+    m_Localized: Camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398505773056000
+    m_Localized: Double slit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398694114082816
+    m_Localized: Fiber Coupler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398906815627264
+    m_Localized: "Mirror 45\xB0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399130992787456
+    m_Localized: "Mirror 90\xB0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399288329519104
+    m_Localized: Periscope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399433687318528
+    m_Localized: Waveplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417130592550912
+    m_Localized: David
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721971575472128
+    m_Localized: 'Hello, this is an introduction to the operation of the virtual
+      quantum suitcase.
+
+      Tap Next below this text to begin the tutorial.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722567162445824
+    m_Localized: 'Press the marked button on the left edge of the quantum suitcase
+      to create a periscope at that location.
+
+      A periscope on the left side
+      of the case is used to reflect the laser from the quantum case onto the playing
+      field.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723949101727744
+    m_Localized: 'Press the marked button on the right edge of the quantum suitcase
+      to create a periscope at this point.
+
+      A periscope on the right side of
+      the case is used to reflect the laser back from the playing field to the quantum
+      case.
+
+      Now the path of the laser from the input to the output is displayed
+      visually.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724842039689216
+    m_Localized: Introduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 726109847764992
+    m_Localized: "Create a new QuBrick by pressing the + sign in the middle right
+      of the quantum suitcase.\nBy default, a newly created QuBrick is of the \u201C45\xB0
+      mirror\u201D type."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751528865120256
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751580647997440
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 757002029187072
+    m_Localized: 'Place the newly created QUBrick on the marked field by picking
+      it up with your fingers and dragging it across the field until you hold it
+      over the marked field.
+
+      Now drop the QUBrick on the marked space.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759765064695808
+    m_Localized: "Create a new QuBrick and place it on the marked space.\nThe QuBrick
+      can be rotated via the QuBrick menu.\nTo access the menu, tap the icon at the
+      top of the brick you just placed.\nTap the \"Rotate left\" or \"Rotate right\"
+      button in the bottom menu bar twice to rotate the token by 180\xB0."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 768607148261376
+    m_Localized: "Create a new QuBrick and place it on the marked space.\nThe QuBrick
+      type can be changed via the QuBrick menu.\nCall up the menu of the placed block
+      and switch to the \u201CChange Type\u201D category. Change the QuBrick's type
+      to \"Beam Splitter\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 770083404857344
+    m_Localized: 'Congratulations, you now know how to use the virtual quantum suitcase.
+
+
+      The
+      incoming laser can now be displayed using the "Show interference pattern" switch
+      on the right side of the lid.
+
+
+      If several lasers overlap there, the
+      interference pattern will also be displayed there.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535753553494016
+    m_Localized: Introduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2535958873063424
+    m_Localized: Michelson-Interferometer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10910647907467264
+    m_Localized: Lightspeed experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10914024884224000
+    m_Localized: Lightspeed-experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915314049695744
+    m_Localized: 'Create a Beamsplitter at the marked position.
+
+
+      The Beam
+      Splitter lets part of the light through but reflects another part onto the
+      gameboard'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10915726567882752
+    m_Localized: 'Create a Beamsplitter at the marked position.
+
+
+      The second
+      Beam Splitter also lets part of the light from the first Beamsplitter through
+      but also takes in light from the gameboard below it and also reflects it to
+      the periscope on its right'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916031611224064
+    m_Localized: "Create a 45\xB0 mirror at the marked position.\n\nThe Mirror reflects
+      the Light coming from the first Beam splitter to the right side of the gameboard"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916595493453824
+    m_Localized: "Create a 45\xB0 mirror at the marked position.\n\nThe mirror reflects
+      the light coming from the first mirror back to the second beamsplitter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10916738875736064
+    m_Localized: You can now measure the speed of light, since you know the offset
+      of the Interference in addition to the extra distance the second beam has to
+      take along the Mirrors in comparison to the unhindered Beam on the bottom of
+      the gameboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919139057811456
+    m_Localized: "Perfect, you have successfully completed the test setup. \nYou
+      can now fire a laser beam under the periscope on the left-hand side. \nOn the
+      right behind the beam splitter you will see the interfered waves. \nYou can
+      then try to influence the path using the options of the 90\xB0 mirror and trigger
+      a new light wave. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10919224722276352
+    m_Localized: 'Create a periscope in the bottom right corner of the board.
+
+
+      This
+      periscope guides the beam path back into the quantum case in parallel to feed
+      it to the detector.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13064302903377920
+    m_Localized: Build automatically
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088954237272064
+    m_Localized: Clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21089938293080064
+    m_Localized: Interference
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30065524533313536
+    m_Localized: "Create a new building block and change it to \"Mirror 45\xB0\"\r\nPlace
+      this so that the beam reflected upwards by the beam splitter is reflected into
+      the periscope on the upper right side of the playing field.\r\n\r\nThis directs
+      the beam back into the periscope so that it can be measured."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30076860289990656
+    m_Localized: Mirror adjustment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30141842495062016
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402482881937408
+    m_Localized: Applications
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402739921469440
+    m_Localized: Double Slit Experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402825418162176
+    m_Localized: Scan bottom left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33402983535034368
+    m_Localized: Quantumcase FullAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403411010109440
+    m_Localized: 'Increase
+
+      slit width'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403561468182528
+    m_Localized: 'Decrease
+
+      slit width'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403608020762624
+    m_Localized: 'Show/Hide
+
+      curve'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403720579104768
+    m_Localized: 'Increase
+
+      slit distance'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403779928506368
+    m_Localized: 'Decrease
+
+      slit distance'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403834353795072
+    m_Localized: 'Show/Hide
+
+      Pattern'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403926813032448
+    m_Localized: 'Increase
+
+      Wavelength'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403964855369728
+    m_Localized: 'Decrease
+
+      Wavelength'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60896770870554624
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60900000543354880
+    m_Localized: Start laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61285878347550720
+    m_Localized: Slower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286025177550848
+    m_Localized: Faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286132572704768
+    m_Localized: Default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61286230761361408
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61296789305118720
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297188091154432
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297582041157632
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61297886602153984
+    m_Localized: Default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298018601095168
+    m_Localized: Faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298167398223872
+    m_Localized: Slower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61298295202861056
+    m_Localized: Laser starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63742366419243008
+    m_Localized: AR Quantumcase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64107083142778880
+    m_Localized: Scan QRCode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64127801585119232
+    m_Localized: Scan top right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64536832232607744
+    m_Localized: GhostImaging Experiment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547612496146432
+    m_Localized: Array detector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65547765789569024
+    m_Localized: An array detector consists of an array of sensors or pixels that
+      measure the intensity of light or other radiation reflected or transmitted
+      by the object.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548760351322112
+    m_Localized: Bucket detector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65548836503105536
+    m_Localized: 'A bucket detector is a single sensor that measures the intensity
+      of incoming light.
+
+
+
+
+
+
+
+
+
+
+
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298294739357696
+    m_Localized: Resulting Image
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66298379942449152
+    m_Localized: Reading the array detector exactly when a photon hits the bucket
+      detector results in an shadow image of the object in front of the bucket detector.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987216793317376
+    m_Localized: Laser pump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987467121963008
+    m_Localized: These pumps supply the energy needed to stimulate a laser medium
+      and generate the emission of laser light. They often consist of high-power
+      lamps, laser diodes, or other light sources that provide the necessary energy
+      to initiate laser activity.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987652657000448
+    m_Localized: Spontaneous Parametric Down-Conversion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66987853769682944
+    m_Localized: A photon splits into two photons of lower energy levels when propagating
+      through a nonlinear crystal material.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67050784129626112
+    m_Localized: Clear Result
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051135230619648
+    m_Localized: Raster laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67051233779986432
+    m_Localized: Start laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67067834327707648
+    m_Localized: Change Shape
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122084965511168
+    m_Localized: Error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122186312478720
+    m_Localized: wrong Placement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122296320684032
+    m_Localized: wrong rotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101122413010415616
+    m_Localized: wrong type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101515024518934528
+    m_Localized: Virtual Quantumcase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634469444562944
+    m_Localized: "Please create a new QuBrick of type 90\xB0 mirror and place it
+      at this position."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112634953307860992
+    m_Localized: "Now open the settings dialogue by tapping on the block. Select
+      the options at the bottom left to vary the distance of the 90\xB0 mirror. This
+      allows you to vary the distance of the laser to this mirror in the order of
+      magnitude of the wavelength (lambda)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112652329386586112
+    m_Localized: "You are now guided through the Michelson interferrometer setup.
+      \nIt is used to measure particularly small differences in distance.\nIt utilises
+      the effect of the inteference of light for this purpose. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112653070868230144
+    m_Localized: "When two light waves meet, they overlap. \nAs a result, the waves
+      influence each other and their wave character changes. \nThis superposition
+      depends on the distance that the waves have travelled relative to each other.\nFor
+      example, if the distance is the same, the wave is amplified because the crests
+      of the first light wave meet the crests of the second light wave exactly. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112656296497721344
+    m_Localized: "Now you can press the \u2018Start laser\u2019 button on the left-hand
+      side of the case. \nIf everything has worked, you will see a red beam following
+      your setup across the track field."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647714762313728
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141647896530866176
+    m_Localized: Close settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648197899997184
+    m_Localized: ' Up/Down'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648300962435072
+    m_Localized: Left/Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648380092174336
+    m_Localized: Forward/Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648671055237120
+    m_Localized: AR Position settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159799728175841280
+    m_Localized: "Place a new QuBrick and set its type to a 45\xB0 mirror.\r\n\r\nTurn
+      the lever until the 45\xB0 mirror symbol appears on the display. If the symbol
+      on the QuBrick does not change, press the lever button once."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159804122359398400
+    m_Localized: "Press the lever on the side until the arrows on the display no
+      longer highlight the mirror symbol but the number below it. This number indicates
+      the phase shift of the waves. \n\nIf the numbers on both mirrors are the same,
+      constructive interference occurs because their distances are identical. A difference
+      of 0.5, for example, 0.5 on one and 0 on the other, results in destructive
+      interference, as one mirror is shifted by half a wavelength.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159807282549358592
+    m_Localized: "Perfect! You have successfully completed the experimental setup.\r\n\r\nYou
+      can now fire a laser beam using the red button. To the right, behind the beam
+      splitter, you will see the interfered waves. You can then try to adjust the
+      path length of the 90\xB0 mirror and trigger a new light wave."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160490863722496000
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4119801351312769101
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0040cb5bc6190000

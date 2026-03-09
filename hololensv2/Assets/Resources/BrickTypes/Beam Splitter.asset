@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1581806500f7bad4095bbf7afb78cb6f, type: 3}
+  m_Name: Beam Splitter
+  m_EditorClassIdentifier: 
+  typeEnum: 0
+  sprite: {fileID: 21300000, guid: 911aa39f15b05394eb38e4f6fbd7ca46, type: 3}
+  brickName:
+    m_TableReference:
+      m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+    m_TableEntryReference:
+      m_KeyId: 397908470611968
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+    m_TableEntryReference:
+      m_KeyId: 394883165274112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  rotatedMirror: 0
+  laserDirections:
+  - inDirection: 0
+    outDirections: 0100000002000000
+  - inDirection: 2
+    outDirections: 0300000000000000
+  - inDirection: 3
+    outDirections: 0200000001000000
+  - inDirection: 1
+    outDirections: 0000000003000000
+  rotationOffset: 1
+  changeColor: 0
+  laserColor: {r: 0, g: 1, b: 0, a: 1}
+  lineThicknessMultiplier: 1
+  changeAlpha: 1
+  newAlpha: 0.5
+  references:
+    version: 2
+    RefIds: []

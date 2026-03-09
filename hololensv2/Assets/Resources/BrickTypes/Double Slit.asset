@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1581806500f7bad4095bbf7afb78cb6f, type: 3}
+  m_Name: Double Slit
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: b32b4f5dcedff194b85cf8f1f3ceb0ec, type: 3}
+  brickName:
+    m_TableReference:
+      m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+    m_TableEntryReference:
+      m_KeyId: 398505773056000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:6937bfbdbd441ee49b31f7fe6dc19eff
+    m_TableEntryReference:
+      m_KeyId: 394557787947008
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  laserDirections:
+  - inDirection: 0
+    outDirections: 02000000
+  - inDirection: 2
+    outDirections: 00000000
+  rotationOffset: 1
+  powerMultiplier: 1
+  changeColor: 0
+  laserColor: {r: 0, g: 1, b: 0, a: 1}
+  changeSegmentSize: 0
+  segmentSizeMultiplier: 1
+  lineThicknessMultiplier: 1
+  changeAlpha: 0
+  newAlpha: 1
+  references:
+    version: 2
+    RefIds: []

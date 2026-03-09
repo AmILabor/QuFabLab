@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2002276124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002276126}
+  - component: {fileID: 2002276127}
+  m_Layer: 0
+  m_Name: JSONSplitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002276126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002276124}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1585500041656918095}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002276127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002276124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beea3feb0ece7d4cb864a6e0f611971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeList:
+  - {fileID: 11400000, guid: 63bea643552a93b42ac55f63301d89e7, type: 2}
+  - {fileID: 11400000, guid: 3f12951613a5a004c8ba52b8956844cd, type: 2}
+  - {fileID: 11400000, guid: 6c26cfc7d1b03234cbc657a76dcd2b50, type: 2}
+  - {fileID: 11400000, guid: 33aaf083927c3774da265c44d4df5bbb, type: 2}
+  - {fileID: 11400000, guid: b0792c3ac9e22ff4eb891b3bb55aee7c, type: 2}
+  - {fileID: 11400000, guid: 477189a7ffa85964ebf86a323bc7df85, type: 2}
+  - {fileID: 11400000, guid: de4c088b8d0e2fc408da58fa4a1486b1, type: 2}
+  - {fileID: 11400000, guid: c35da538acaeb474da0a64d6e7539d6e, type: 2}
+  - {fileID: 11400000, guid: 567747580338248419d6e0976da8b2f0, type: 2}
+  - {fileID: 11400000, guid: 53b2d4b621bc71546a6befd10958aaa6, type: 2}
+  - {fileID: 11400000, guid: fbb3b7406eb4e43449b9df5d946c4e68, type: 2}
+  processedData:
+    command: 0
+    posX: 0
+    posY: 0
+    rotation: 0
+    type: {fileID: 0}
+    value: 0
+  onDataReceived:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TestCaseCreator, Assembly-CSharp
+        m_MethodName: ProcessWebsocketData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1585500041656918093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585500041656918095}
+  - component: {fileID: 1585500041656918094}
+  - component: {fileID: 209649562}
+  m_Layer: 0
+  m_Name: Websocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1585500041656918095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585500041656918093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2002276126}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1585500041656918094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585500041656918093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07030859da0f344ebab3f33ffdfabd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ip: localhost:8765
+  connectOnStart: 0
+  useWss: 0
+  messageReceived:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 209649562}
+        m_TargetAssemblyTypeName: MessageProcessor, Assembly-CSharp
+        m_MethodName: process
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  loggerIgnoreString: ACK?
+--- !u!114 &209649562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585500041656918093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91f7cf2dff85d342a9d4324930ce0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  askedForACK:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1585500041656918094}
+        m_TargetAssemblyTypeName: AMI.DangerLevel.Network.WebSocketBridge, Assembly-CSharp
+        m_MethodName: SendWebSocketMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ACK
+          m_BoolArgument: 0
+        m_CallState: 2
+  processMessage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002276127}
+        m_TargetAssemblyTypeName: WebsocketJSONSplitter, Assembly-CSharp
+        m_MethodName: Split
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

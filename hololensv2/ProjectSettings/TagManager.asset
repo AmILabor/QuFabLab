@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fusion
+  - Rot
+  - Gruen
+  - Eins
+  - mirror
+  - LaserCollider
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Laser
+  - Water
+  - UI
+  - MirrorColliderGI
+  - DisplayedObjectGI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Spatial Awareness
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

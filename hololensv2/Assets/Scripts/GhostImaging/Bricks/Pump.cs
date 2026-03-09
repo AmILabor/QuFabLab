@@ -1,0 +1,69 @@
+using Microsoft.MixedReality.Toolkit;
+using QuantenKoffer.Bricks;
+using QuantenKoffer.Dialog;
+using QuantenKoffer.Laser;
+using UnityEngine;
+
+namespace GhostImaging.Bricks
+{
+    public class Pump : Brick
+    {
+        [SerializeField] private GameObject LaserBeam;
+        [SerializeField] private bool disabled = false;
+
+        [ContextMenu("Start")]
+        public void CallStartBeam()
+        {
+            StartBeam();
+        }
+
+        public void ShowExplanation()
+        {
+            AMI.Util.Console.Log("SHOWEXPLANTitle", "TITLE!");
+            AMI.Util.Console.Log("SHOWEXPLANDescr", "DESCRIPTION");
+        }
+
+        public void StartBeam(Transform beamParent = null, float speedMultiplier = 1.0f)
+        {
+            if (!disabled)
+            {
+                GameObject beamGo = GameObject.Instantiate(LaserBeam);
+                LaserBeam beam = beamGo.GetComponent<LaserBeam>();
+                LaserBeam[] beams = HandleLaserBase(beam, getOutVectors(beam.direction));
+                foreach (var _beam in beams)
+                {
+                    if (beamParent != null) _beam.transform.parent = beamParent;
+                    _beam.SetSpeed(speedMultiplier);
+                    _beam.Draw();
+                }
+
+                disabled = beams.Length > 0;
+                Destroy(beamGo);
+            }
+        }
+
+        public override void ShowDialog()
+        {
+            DialogHandler handler = dialogReference.GetComponent<DialogHandler>();
+            handler.SetCurrentBrick(this);
+            handler.DisableNavigationButtonsButDelete();
+        }
+
+        protected override void NotifySourceOnNextHit(LaserBeam outgoingBeam)
+        {
+            disabled = false;
+        }
+
+        public override LaserBeam[] HandleLaser(LaserBeam beam)
+        {
+            AMI.Util.Console.Log("Destroying incoming Beam");
+            beam.DestroyWhenDone();
+            return new LaserBeam[] { };
+        }
+
+        protected override Vector3[] getOutVectors(Vector3 inVector)
+        {
+            return new[] { Vector3.left.RotateAround(Vector3.zero, transform.rotation.eulerAngles) };
+        }
+    }
+}
