@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c88705f9-a55f-4872-bed4-503181ca2e02" name="qucase_ami">
+        <fileTransfer accessType="SFTP" host="192.168.178.161" port="22" sshConfigId="17e7b9e4-f7bc-4865-9c33-714a92eab103" sshConfig="pi@192.168.178.161:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
