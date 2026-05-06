@@ -20,7 +20,7 @@
 #define PDF8574_ADDR 0x38
 #define TFT_CS 0
 #define TFT_DC 3
-#define I2C_ADDR  0x16
+#define I2C_ADDR  0x15       // I2C address of the device (Change this for each QuBrick)
 #define TYPE_REGISTER  0x10
 #define SETTING_REGISTER0 0x11
 #define SETTING_REGISTER1 0x12

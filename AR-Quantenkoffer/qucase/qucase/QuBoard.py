@@ -64,10 +64,15 @@ class QuBoard:
         GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(QuBoard._laser_start_button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(16, GPIO.OUT)
+        GPIO.output(16,GPIO.HIGH)
+        logger.info("Setup GPIO 12 to auto high out")
         for _input in QuBoard._inputs:
             GPIO.setup(_input, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
         for output in QuBoard._outputs:
             GPIO.setup(output, GPIO.OUT)
+        for led_pin in config.LED_GPIOS:
+            GPIO.setup(led_pin, GPIO.OUT)
 
     def __setup_i2c(self):
         self.i2c = busio.I2C(board.SCL, board.SDA)
@@ -99,12 +104,62 @@ class QuBoard:
                 cb(registered)
         self.laser_fired = registered
 
-
+    def _check_error_and_set_led(self) -> None:
+        """
+        Check if there is any error and set the red LED (LED_GPIOS[0]) accordingly.
+        """
+        # Check for board-level error
+        error_detected = self.error is not None
+        
+        # Check if any brick has a read error
+        if not error_detected:
+            for brick in self.get_bricks():
+                if getattr(brick, "read_error", False):
+                    error_detected = True
+                    break
+        
+        # Set red LED based on error status
+        if error_detected:
+            GPIO.output(config.LED_GPIOS[0], GPIO.HIGH)
+        else:
+            GPIO.output(config.LED_GPIOS[0], GPIO.LOW)
+            
+    def check_setup_complete(self) -> bool:
+        """
+        Check if all required QuBricks are in place with correct rotation and type.
+        Turns on yellow LED (LED_GPIOS[1]) if setup is complete, turns it off otherwise.
+        """
+        required_bricks = [
+            {"x": 2, "y": 0, "rotation": 0, "type": 2},
+            {"x": 2, "y": 2, "rotation": 1, "type": 0},
+            {"x": 0, "y": 2, "rotation": 3, "type": 1},
+            {"x": 2, "y": 4, "rotation": 2, "type": 1},
+            {"x": 4, "y": 2, "rotation": 1, "type": 2},
+            {"x": 4, "y": 0, "rotation": 3, "type": 2},
+        ]
+        
+        for req in required_bricks:
+            brick = self.brick_board[req["x"]][req["y"]]
+            
+            # Check if brick exists at position
+            if brick is None:
+                GPIO.output(config.LED_GPIOS[1], GPIO.LOW)
+                return False
+            
+            # Check rotation and type
+            if brick.rotation != req["rotation"] or brick.type != req["type"]:
+                GPIO.output(config.LED_GPIOS[1], GPIO.LOW)
+                return False
+        
+        # All bricks correct - turn on yellow LED
+        GPIO.output(config.LED_GPIOS[1], GPIO.HIGH)
+        return True
 
     def add_qubrick(self, x, y) -> QuBrick:
         changed = self.__scan_i2c_bus()
         if len(changed) == 0:
-            logger.error(f"Coud not add QuBrick at Position {x},{y} because no address has been found.")
+            logger.error(f"Coud not add QuBrick at Position {x},{y} because no address has been found. Please remove the QuBrick you just placed")
+            self.error = "Could not add QuBrick - no address found"
             return
         logger.info(f"Adding QuBrick at Position {x},{y} @{changed[0]}")
         self.brick_board[x][y] = QuBrick(self.i2c, changed[0], x, y)
@@ -117,8 +172,10 @@ class QuBoard:
         return self.brick_board[x][y]
 
     def remove_qubrick(self, x, y):
+        GPIO.output(config.LED_GPIOS[2], GPIO.LOW)
         if self.brick_board[x][y] is None:
             logger.error(f"Could not remove brick because there is no Brick at {x},{y}")
+            self.error = "Could not remove brick - no brick at position"
             return
         brick_address = self.brick_board[x][y].address
         logger.info(f"Removing QuBrick at Position {x},{y} @ {brick_address}")
@@ -136,7 +193,9 @@ class QuBoard:
     def scan(self):
         self.__scan_start_laser()
         if not self.scan_for_new_participants():
+            GPIO.output(config.LED_GPIOS[2], GPIO.HIGH)
             return
+        GPIO.output(config.LED_GPIOS[2], GPIO.LOW) # Green LED to low when QuBrick is added
         logger.info("New Participant discovered via i2c. Scanning the matrix to determine its position.")
         for x, output_pin in enumerate(self._outputs):
             GPIO.output(output_pin, GPIO.HIGH)
@@ -149,7 +208,9 @@ class QuBoard:
                     if current_state:
                         self.add_qubrick(x, y)
             GPIO.output(output_pin, GPIO.LOW)
-
+        # Make sure the LED reflects any errors that may have appeared while scanning
+        self._check_error_and_set_led()
+    
     def update_bricks(self):
         rows = len(self.brick_board)
         for x in range(rows):
@@ -160,11 +221,20 @@ class QuBoard:
 
                 updated = current_brick.fetch()
                 if current_brick.read_error:
+                    self.error = f"Brick read error at {x},{y}"
                     self.remove_qubrick(x, y)
                     continue
                 if updated:
                     for cb in self.brick_update_callbacks:
                         cb(current_brick)
+            
+        # Clear error if no bricks have errors
+        if self.error and self.error.startswith("Brick read error"): 
+                self.error = None
+        # After processing all bricks, make the red LED match the current error state
+        self._check_error_and_set_led()
+        self.check_setup_complete()  # Add this line
+
 
     def get_bricks(self) -> list[QuBrick]:
         r = []
