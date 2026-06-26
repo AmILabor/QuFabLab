@@ -8,7 +8,7 @@ from qucase.QuBoard import QuBoard
 from qucase.TestingQuBoard import TestingQuBoard
 import logging
 from argparse import ArgumentParser
-import os
+import subprocess
 from config import LED_GPIOS
 import RPi.GPIO as GPIO
 
@@ -25,11 +25,6 @@ logger = logging.getLogger("main")
 
 if __name__ == "__main__":
     time.sleep(10)
-  #  print("LEDs: ", LED_GPIOS)
- #   timer_led = LED_GPIOS[2]
-#    GPIO.setmode(GPIO.BCM)
-#    for led_pin in LED_GPIOS:
-   # GPIO.setup(timer_led, GPIO.OUT)
     parser = ArgumentParser()
     parser.add_argument("--testing",action='store_true', default=False,required=False)
     args = parser.parse_args()
@@ -46,7 +41,6 @@ if __name__ == "__main__":
     else:
         board = QuBoard()
 
-    GPIO.output(LED_GPIOS[2],GPIO.HIGH)
 
     restore = lambda client, server: [server.broadcast(CommandFactory.generate_add_command(brick)) for brick in
                                       board.get_bricks()]
@@ -62,7 +56,10 @@ if __name__ == "__main__":
 
     if testing:
         print_help()
-
+    logger.info("Server started at %s", ws_connection_uri)   
+    logger.info("Scan the QR code below to connect:")
+    logger.info("\n"+generate_connect_qrcode(ws_connection_uri)) 
+    GPIO.output(LED_GPIOS[2],GPIO.HIGH) # Set green LED to High (on) to indicate that a brick can be placed
     while True:
         has_clients = server.has_clients()
         clients_changed = had_clients != has_clients
@@ -70,32 +67,18 @@ if __name__ == "__main__":
             had_clients = has_clients
         if not has_clients and (clients_changed or startup):
             if not testing:
-                os.system("clear")
+                subprocess.run(["clear"])
             logger.info("Waiting for connection...")
         elif has_clients and clients_changed and not testing:
             if not testing:
-                os.system("clear")
+                subprocess.run(["clear"])
 
         startup = False
         if testing:
             handle_testing_loop(board=board, server=server)
 
-
- #       GPIO.output(LED_GPIOS[2],GPIO.LOW)
         board.scan()
         board.update_bricks()
         
-#        time.sleep(1)
-#        GPIO.output(LED_GPIOS[2],GPIO.HIGH)
-
-        
-       # ---- Brick timer (from utils.py) ----
-#       brick_placed_time, previous_brick_count = handle_brick_timer(
-#        board=board,
-#       led_pin=LED_GPIOS[2],
-#        brick_placed_time=brick_placed_time,
-#        previous_brick_count=previous_brick_count
-#    )
-
         # ---- Sleep ----
         time.sleep(0.1)

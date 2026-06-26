@@ -18,6 +18,15 @@ class QuBoard:
     _laser_fire_timeout = config.LASER_FIRE_TIMEOUT
     state_board: list[list[bool]]
     brick_board: list[list[QuBrick]]
+    
+    REQUIRED_BRICK_CONFIG = [
+        {"x": 2, "y": 0, "rotation": 0, "type": 2},
+        {"x": 2, "y": 2, "rotation": 1, "type": 0},
+        {"x": 0, "y": 2, "rotation": 3, "type": 1},
+        {"x": 2, "y": 4, "rotation": 2, "type": 1},
+        {"x": 4, "y": 2, "rotation": 1, "type": 2},
+        {"x": 4, "y": 0, "rotation": 3, "type": 2},
+    ]
 
     def __init__(self):
         self.state_changed = False
@@ -27,6 +36,8 @@ class QuBoard:
         self.brick_board = []
         self.laser_fired = False
         self.last_laser_fired = time.time()
+        self.setup_complete = False
+        self.error_state = False
         self.__setup_gpios()
         self.__setup_i2c()
         self.__setup_state_board()
@@ -104,56 +115,74 @@ class QuBoard:
                 cb(registered)
         self.laser_fired = registered
 
-    def _check_error_and_set_led(self) -> None:
+    def _check_error_and_set_led(self) -> tuple[bool, bool]:
         """
-        Check if there is any error and set the red LED (LED_GPIOS[0]) accordingly.
+        Check if there is any error on the board or bricks.
+        Returns (error_detected, has_changed).
+        Does not change GPIOs directly; caller should update LEDs when `has_changed` is True.
         """
         # Check for board-level error
         error_detected = self.error is not None
-        
+
         # Check if any brick has a read error
         if not error_detected:
             for brick in self.get_bricks():
                 if getattr(brick, "read_error", False):
                     error_detected = True
                     break
-        
-        # Set red LED based on error status
+
+        has_changed = error_detected != getattr(self, "error_state", False)
+        self.error_state = error_detected
+
         if error_detected:
-            GPIO.output(config.LED_GPIOS[0], GPIO.HIGH)
-        else:
-            GPIO.output(config.LED_GPIOS[0], GPIO.LOW)
+            logger.warning("Error detected on board or bricks")
+        # else:
+        #     logger.info("No errors detected on board or bricks")
+
+        return error_detected, has_changed
             
-    def check_setup_complete(self) -> bool:
+    def check_setup_complete(self) -> tuple[bool, list[str]]:
         """
         Check if all required QuBricks are in place with correct rotation and type.
-        Turns on yellow LED (LED_GPIOS[1]) if setup is complete, turns it off otherwise.
+        Returns (is_complete, has_changed).
         """
-        required_bricks = [
-            {"x": 2, "y": 0, "rotation": 0, "type": 2},
-            {"x": 2, "y": 2, "rotation": 1, "type": 0},
-            {"x": 0, "y": 2, "rotation": 3, "type": 1},
-            {"x": 2, "y": 4, "rotation": 2, "type": 1},
-            {"x": 4, "y": 2, "rotation": 1, "type": 2},
-            {"x": 4, "y": 0, "rotation": 3, "type": 2},
-        ]
-        
-        for req in required_bricks:
-            brick = self.brick_board[req["x"]][req["y"]]
-            
+        errors: list[str] = []
+
+        for req in self.REQUIRED_BRICK_CONFIG:
+            try:
+                brick = self.brick_board[req["x"]][req["y"]]
+            except Exception:
+                brick = None
+
             # Check if brick exists at position
             if brick is None:
-                GPIO.output(config.LED_GPIOS[1], GPIO.LOW)
-                return False
-            
-            # Check rotation and type
-            if brick.rotation != req["rotation"] or brick.type != req["type"]:
-                GPIO.output(config.LED_GPIOS[1], GPIO.LOW)
-                return False
-        
-        # All bricks correct - turn on yellow LED
-        GPIO.output(config.LED_GPIOS[1], GPIO.HIGH)
-        return True
+                error_msg = f"No brick at position ({req['x']}, {req['y']})"
+                # logger.warning(f"Setup incomplete: {error_msg}")
+                errors.append(error_msg)
+                continue
+
+            # Check rotation
+            if getattr(brick, "rotation", None) != req["rotation"]:
+                error_msg = f"Brick at ({req['x']}, {req['y']}) has wrong rotation: expected {req['rotation']}, got {getattr(brick, 'rotation', None)}"
+                # logger.warning(f"Setup incomplete: {error_msg}")
+                errors.append(error_msg)
+
+            # Check type
+            if getattr(brick, "type", None) != req["type"]:
+                error_msg = f"Brick at ({req['x']}, {req['y']}) has wrong type: expected {req['type']}, got {getattr(brick, 'type', None)}"
+                # logger.warning(f"Setup incomplete: {error_msg}")
+                errors.append(error_msg)
+
+        is_complete = len(errors) == 0
+        has_changed = is_complete != getattr(self, "setup_complete", False)
+        self.setup_complete = is_complete
+
+        if is_complete:
+        #     logger.warning(f"Setup incomplete with {len(errors)} error(s): {errors}")
+        # else:
+            logger.info("Setup check: all required bricks present and correct")
+
+        return is_complete, has_changed
 
     def add_qubrick(self, x, y) -> QuBrick:
         changed = self.__scan_i2c_bus()
@@ -208,8 +237,7 @@ class QuBoard:
                     if current_state:
                         self.add_qubrick(x, y)
             GPIO.output(output_pin, GPIO.LOW)
-        # Make sure the LED reflects any errors that may have appeared while scanning
-        self._check_error_and_set_led()
+        # Note: error and setup checks are handled in update_bricks only
     
     def update_bricks(self):
         rows = len(self.brick_board)
@@ -229,12 +257,27 @@ class QuBoard:
                         cb(current_brick)
             
         # Clear error if no bricks have errors
-        if self.error and self.error.startswith("Brick read error"): 
-                self.error = None
-        # After processing all bricks, make the red LED match the current error state
-        self._check_error_and_set_led()
-        self.check_setup_complete()  # Add this line
+        if self.error and self.error.startswith("Brick read error"):
+            self.error = None
+        # Check error state and update red LED only when status changed
+        error_detected, error_changed = self._check_error_and_set_led()
+        if error_changed:
+            red_led = config.LED_GPIOS[0]
+            GPIO.output(red_led, GPIO.HIGH if error_detected else GPIO.LOW)
+            if error_detected:
+                logger.warning("Error detected. Red LED enabled.")
+            else:
+                logger.info("Errors cleared. Red LED disabled.")
 
+        # Update setup-complete status and set yellow LED only when status changed
+        is_complete, has_changed = self.check_setup_complete()
+        if has_changed:
+            yellow_led = config.LED_GPIOS[1]
+            GPIO.output(yellow_led, GPIO.HIGH if is_complete else GPIO.LOW)
+            if is_complete:
+                logger.info("Setup complete! Yellow LED enabled.")
+            else:
+                logger.warning("Setup no longer complete. Yellow LED disabled.")
 
     def get_bricks(self) -> list[QuBrick]:
         r = []
