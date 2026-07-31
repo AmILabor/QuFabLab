@@ -247,11 +247,13 @@ namespace QuantenKoffer.Dialog
         // (refactoring) Schreibe eine Methode um den Dialog ein- und auszublenden
         public void DestroyCurrentBrick()
         {
-            brick.Destroy();
+            if (brick.IsOnGrid())
+                brick.SendMessageUpwards("RemoveFromGrid", brick, SendMessageOptions.DontRequireReceiver);
+            else
+                brick.Destroy();
             InfoDialog.SetActive(false);
             Buttons.SetActive(false);
             ExitButton.SetActive(false);
-            StartCoroutine(((INextFrameUnityEventInvoker)this).InvokeNextFrame<Brick>(OnBrickAction, null));
         }
 
         /// <summary>

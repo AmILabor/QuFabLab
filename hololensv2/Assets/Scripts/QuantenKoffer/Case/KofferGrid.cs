@@ -575,7 +575,8 @@ namespace QuantenKoffer.Case
                         fields[x, y].Destroy();
                         fields[x, y] = null;
                         AMI.Util.Console.Log("Koffergrid",
-                            $"QuBrick has been removed from the gridat position ({x},{y})");
+                            $"QuBrick has been removed from the grid at position ({x},{y})");
+                        StartCoroutine(((INextFrameUnityEventInvoker)this).InvokeNextFrame<Brick>(OnBrickAction, null));
                         return;
                     }
                 }
