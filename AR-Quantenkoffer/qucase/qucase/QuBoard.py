@@ -177,12 +177,12 @@ class QuBoard:
         has_changed = is_complete != getattr(self, "setup_complete", False)
         self.setup_complete = is_complete
 
-        if is_complete:
-        #     logger.warning(f"Setup incomplete with {len(errors)} error(s): {errors}")
-        # else:
-            logger.info("Setup check: all required bricks present and correct")
+        # if is_complete:
+        # #     logger.warning(f"Setup incomplete with {len(errors)} error(s): {errors}")
+        # # else:
+        #     logger.info("Setup check: all required bricks present and correct")
 
-        return is_complete, has_changed
+        # return is_complete, has_changed
 
     def add_qubrick(self, x, y) -> QuBrick:
         changed = self.__scan_i2c_bus()
