@@ -1,3 +1,7 @@
+/// <summary>
+/// Hilfsklasse zur Erkennung von Laserstrahl-Kollisionen mit Bausteinen.
+/// Leitet Kollisionsereignisse an den Brick-Kollisionshandler weiter.
+/// </summary>
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +9,10 @@ using QuantenKoffer.Bricks;
 using QuantenKoffer.Laser;
 using UnityEngine;
 
+/// <summary>
+/// Hilfsklasse zur Erkennung von Laserstrahl-Kollisionen mit Bausteinen.
+/// Leitet Kollisionsereignisse an den Brick-Kollisionshandler weiter.
+/// </summary>
 public class BrickCollisionHelper : MonoBehaviour
 {
     private Brick brick; //!< Komponente des überliegenden Game-Objekts

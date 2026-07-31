@@ -1,3 +1,7 @@
+/// <summary>
+/// Gibt einen zufälligen Punkt innerhalb eines konfigurierbaren Rechtecks zurück.
+/// Zeigt das Rechteck im Editor mit Gizmos an.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

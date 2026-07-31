@@ -1,3 +1,6 @@
+/// <summary>
+/// Ein ScriptableObject, das eine vollständige Anleitung mit mehreren Schritten (InstructionDetail) repräsentiert.
+/// </summary>
 using System.Collections.Generic;
 using QuantenKoffer.Bricks;
 using UnityEngine;

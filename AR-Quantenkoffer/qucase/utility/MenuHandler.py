@@ -1,3 +1,9 @@
+"""Menü-Handler für den Testmodus von QuCase.
+
+Ermöglicht die manuelle Steuerung des virtuellen Spielfelds
+über die Kommandozeile, wenn der Server mit --testing gestartet wird.
+"""
+
 from qucase.QuBoard import QuBoard
 from websocket_communication.ws_server import WSServer
 from .CommandFactory import CommandFactory, DummyBrick
@@ -6,11 +12,8 @@ import logging
 logger = logging.getLogger("MenuHandlerUtils")
 
 
+# Zeigt das Hilfemenü mit allen verfügbaren Testbefehlen an
 def print_help():
-    """
-    Prints the Help-Menu Structure if testing is enabled.
-    :return:
-    """
     print("""
      Commands to manage qubricks on a virtual board
      types: 0-3
@@ -31,12 +34,8 @@ def print_help():
      """)
 
 
+# Parst eine manuelle Eingabe und erzeugt die entsprechenden WebSocket-Befehle
 def handle_manual_input(input_text: str) -> list[dict] | None:
-    """
-    Parses the manual input strings from print_help and returns websocket command messages.
-    :param input_text: space separated string
-    :return: list of command message-dicts
-    """
     args = input_text.split(" ")
     if len(args) > 5:
         print("Too many arguments...")
@@ -72,6 +71,7 @@ def handle_manual_input(input_text: str) -> list[dict] | None:
         return [CommandFactory.generate_setting_command(DummyBrick(int(x), int(y), 0, 0, setting=setting))]
 
 
+# Hauptschleife des Testmodus: liest Benutzereingaben und führt die entsprechenden Aktionen aus
 def handle_testing_loop(board: QuBoard, server: WSServer):
     cmd = input("#")
     try:

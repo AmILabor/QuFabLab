@@ -1,3 +1,7 @@
+/// <summary>
+/// Lädt eine Szene asynchron und unterstützt das Entladen anderer Szenen.
+/// Kann Szenen additiv laden und bestimmte Szenen vom Entladen ausnehmen.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

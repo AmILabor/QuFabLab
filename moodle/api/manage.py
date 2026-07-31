@@ -4,6 +4,7 @@ import os
 import sys
 
 
+# Einstiegspunkt für Django-Verwaltungsbefehle.
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
     try:

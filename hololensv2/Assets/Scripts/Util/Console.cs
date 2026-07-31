@@ -1,3 +1,7 @@
+/// <summary>
+/// Benutzerdefinierter Debug-Logger mit farbcodierten Kategorien.
+/// Bietet Log-, Warnungs- und Fehlerausgaben mit optionalem GameObject-Kontext.
+/// </summary>
 using System;
 using System.Diagnostics;
 using UnityEngine;

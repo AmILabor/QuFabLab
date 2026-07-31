@@ -1,3 +1,11 @@
+"""
+WebSocket-Logging-Server für die Unity-Anwendung.
+
+Die IP-Adresse des Servers muss im GameObject "WSLogger"
+in der entsprechenden Szene eingestellt werden.
+Eignet sich zum Debuggen und Überwachen der Nachrichten.
+"""
+
 from websocket_communication.ws_server import WSServer
 from time import sleep
 
@@ -5,11 +13,7 @@ import logging
 import json
 
 
-"""
-Websocket-Loggin-Server für die Unity Anwendung. Die IP-Adresse des Servers muss im GameObject "WSLogger" 
-in der entsprechenden Szene eingestellt werden.
-"""
-
+# Gibt eine eingehende WebSocket-Nachricht formatiert auf der Konsole aus
 def print_msg(ob):
     msg = json.loads(ob).get("message","")
     level = json.loads(ob).get("type","")

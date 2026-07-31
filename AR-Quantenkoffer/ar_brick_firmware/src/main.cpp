@@ -1,3 +1,15 @@
+/**
+ * @file main.cpp
+ * @brief Hauptfirmware für einen AR-QuBrick (Quantenkoffer-Baustein).
+ * 
+ * Steuert die Anzeige auf einem TFT-Display, liest Drehschalter und
+ * einen Drehgeber aus, verwaltet die I2C-Kommunikation und speichert
+ * Einstellungen dauerhaft im Flash-Speicher.
+ * 
+ * Enthält die Hauptschleife (loop), Initialisierung (setup) sowie
+ * I2C-Handler für den Datenaustausch mit dem Hauptsystem.
+ */
+
 #include "Arduino.h"
 #include <SoftWire.h>
 #include <AsyncDelay.h>
@@ -56,6 +68,10 @@ void I2C_RqHandler();
 uint8_t readOccupiedJumpers();
 
 
+/**
+ * @brief Initialisiert die Hardware: I2C, GPIO-Expander, TFT, Encoder,
+ *        Menü, Persistenz, I2C-Slave und Handler.
+ */
 void setup() {
   Serial.begin(9600);
   setupSoftwareI2C();
@@ -78,6 +94,10 @@ void setup() {
 unsigned long lastI2CRequest = millis();
 unsigned long millisI2CRequestTimeout = 500;
 unsigned long lastI2CConnectedState = true;
+/**
+ * @brief Hauptschleife: Liest Encoder und Jumper, aktualisiert Menü und
+ *        I2C-Verbindungsstatus, persistiert bei Änderungen.
+ */
 void loop(void) {
   enc->loop();
   encoderResult = enc->getResult();

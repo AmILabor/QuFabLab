@@ -1,3 +1,7 @@
+/// <summary>
+/// Leitet Debug-Logmeldungen über eine WebSocket-Verbindung weiter.
+/// Sammelt Meldungen in einer Warteschlange, bis die Verbindung hergestellt ist.
+/// </summary>
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;

@@ -1,3 +1,7 @@
+/// <summary>
+/// Verarbeitet eingehende WebSocket-Nachrichten und ruft abhängig vom Nachrichteninhalt
+/// das entsprechende UnityEvent auf (ACK-Abfrage oder normale Nachricht).
+/// </summary>
 using UnityEngine;
 using UnityEngine.Events;
 

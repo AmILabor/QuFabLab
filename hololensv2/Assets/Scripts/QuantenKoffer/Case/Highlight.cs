@@ -1,3 +1,7 @@
+/// <summary>
+/// Hebt ein oder mehrere MeshRenderer- und/oder SpriteRenderer-Objekte mit einem farbigen Material hervor.
+/// Wird für die visuelle Rückmeldung bei Platzierungs- und Anleitungsschritten verwendet.
+/// </summary>
 using System.Collections.Generic;
 using UnityEngine;
 

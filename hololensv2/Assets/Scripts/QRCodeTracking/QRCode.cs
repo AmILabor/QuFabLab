@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/// <summary>
+/// Enthält die Klasse zur Darstellung eines einzelnen QR-Codes mit seinen Eigenschaften.
+/// </summary>
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -91,7 +94,9 @@ namespace AMI.QRTracking
         private System.Uri uriResult;
         private long lastTimeStamp = 0;
 
-        // Use this for initialization
+        /// <summary>
+        /// Initialisiert die QR-Code-Anzeige mit den Daten des erkannten QR-Codes.
+        /// </summary>
         void Start()
         {
             PhysicalSize = 0.1f;
@@ -125,6 +130,9 @@ namespace AMI.QRTracking
                           " QRVersion = " + qrCode.Version + " QRData = " + CodeText);
         }
 
+        /// <summary>
+        /// Aktualisiert die angezeigten Eigenschaften des QR-Codes, wenn sich diese ändern.
+        /// </summary>
         void UpdatePropertiesDisplay()
         {
             // Update properties that change
@@ -152,7 +160,9 @@ namespace AMI.QRTracking
             }
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Wird pro Frame aufgerufen und aktualisiert die Eigenschaften sowie den URI-Start.
+        /// </summary>
         void Update()
         {
             UpdatePropertiesDisplay();
@@ -163,6 +173,9 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Öffnet die im QR-Code enthaltene URI im Standardbrowser.
+        /// </summary>
         void LaunchUri()
         {
 #if WINDOWS_UWP
@@ -171,6 +184,9 @@ namespace AMI.QRTracking
 #endif
         }
 
+        /// <summary>
+        /// Wird bei einem Klick auf den QR-Code aufgerufen und startet die URI, falls vorhanden.
+        /// </summary>
         public void OnInputClicked()
         {
             if (validURI)

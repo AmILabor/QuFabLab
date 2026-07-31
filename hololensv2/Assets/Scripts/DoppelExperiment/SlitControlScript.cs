@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Steuerung der Spaltbreite und des Spaltabstands im Doppelspalt-Experiment.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

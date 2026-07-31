@@ -1,11 +1,22 @@
+/**
+ * @file encoder.cpp
+ * @brief Implementierung der Drehgeber-Dekodierung mit Interrupt-Unterstützung.
+ * 
+ * Verwendet einen Zustandsautomaten zur Entprellung und Erkennung
+ * von Drehrichtung und Tastendruck des Drehgebers.
+ */
+
 #include "Encoder.hpp"
 
+/// Globaler Zeiger auf die Encoder-Instanz für den Interrupt-Handler.
 Encoder * clsPointer;
 
+/// Globale Interrupt-Service-Routine, ruft die Klassenmethode auf.
 void outsideInterruptHandler(){
     clsPointer->handleInterrupt();
 }
 
+/// Konstruktor: Initialisiert Pins als Input-Pullup und bindet Interrupts.
 Encoder::Encoder(uint8_t clkPin, uint8_t dtPin, uint8_t swPin) {
     this->clkPin = clkPin;
     this->dtPin = dtPin;
@@ -21,6 +32,7 @@ Encoder::Encoder(uint8_t clkPin, uint8_t dtPin, uint8_t swPin) {
     attachInterrupt(digitalPinToInterrupt(this->clkPin),outsideInterruptHandler,CHANGE);
     attachInterrupt(digitalPinToInterrupt(this->swPin),outsideInterruptHandler,CHANGE);
 }
+/// Verarbeitet die Drehgeber-Signale mittels Zustandsautomat (Transitionstabelle).
 void Encoder::loop(){
         if(this->handleLoop){
             // Reset the flag that brought us here (from ISR)
@@ -77,6 +89,7 @@ void Encoder::loop(){
             this->dir=-1;
         }
 }
+/// Gibt das aktuelle Ergebnis zurück und setzt Tastendruck zurück.
 EncoderResult Encoder::getResult(){
     EncoderResult er;
     boolean changed = this->lastPosition != this->position || this->pressed;
@@ -91,6 +104,7 @@ EncoderResult Encoder::getResult(){
     return er;
 }
 
+/// ISR-freundliche Routine: setzt Flag für spätere Verarbeitung in loop().
 void Encoder::handleInterrupt(){
     this->handleLoop=true;
 }

@@ -1,3 +1,7 @@
+/// <summary>
+/// Wandelt Spracheingabe in Text um und zeigt diesen auf einem TMP_Text-Element an.
+/// Steuert die Aufnahme über einen DictationHandler und schaltet den Aufnahmezustand um.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

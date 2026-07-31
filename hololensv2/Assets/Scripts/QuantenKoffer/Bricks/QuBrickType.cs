@@ -1,3 +1,6 @@
+/// <summary>
+/// ScriptableObject, das einen QuBrick-Typ definiert. Enthält Typ-Enum, Sprite, Namen und Beschreibung.
+/// </summary>
 using UnityEngine;
 using UnityEngine.Localization;
 

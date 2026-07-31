@@ -1,3 +1,12 @@
+/**
+ * @file menu.hpp
+ * @brief Menüsystem für das TFT-Display des Quantenkoffer-Bausteins.
+ * 
+ * Verwaltet mehrere Menüeinträge (Brick-Typen), erlaubt Navigation
+ * über einen Drehgeber und kümmert sich um die Anzeige der aktuellen
+ * Einstellungen auf dem Bildschirm.
+ */
+
 #ifndef Menu_h
 #define Menu_h
 #include "Arduino.h" 
@@ -12,6 +21,7 @@
 
 class Menu {
 public:
+    /// Erzeugt das Menü mit den Standard-Brick-Einträgen.
     Menu(Adafruit_GC9A01A * _display,int rotation=3){
         display = _display;
         displayRotation = rotation;
@@ -19,9 +29,11 @@ public:
                    new Mirror90Entrie(_display),
                    new Mirror45Entrie(_display)}; // new PeriscopeEntrie(_display)
     };
+    /// Gibt zurück, ob ein I2C-Host erkannt wurde.
     bool getDetected(){
         return this->isDetected;
     }
+    /// Zeichnet das gesamte Menü (Kopfzeile, Einstellungen, Pfeile) neu.
     void render(){     
         display->setRotation(displayRotation);
         if(mode==0){
@@ -38,10 +50,12 @@ public:
         entries[currentEntrie]->render();
 
     }
+    /// Zeichnet die I2C-Verbindungsanzeige (grün/rot).
     void drawConnectedIndicator(){
         entries[currentEntrie]->DrawConnectedIndicator(this->isDetected);    
         //entries[currentEntrie]->render();
     }
+    /// Verarbeitet Drehrichtung (1=vor, 0=zurück) und zeichnet neu.
     void handleInput(uint8_t direction){
         if(direction==1){
             next();
@@ -51,6 +65,7 @@ public:
         }
         render();
     }
+    /// Nächster Eintrag (Modus 0) oder Einstellung erhöhen (Modus 1).
     void next(){
         if(mode == 1){
             int v = entries[currentEntrie]->getSetting();
@@ -63,6 +78,7 @@ public:
         }
         
     }
+    /// Vorheriger Eintrag (Modus 0) oder Einstellung verringern (Modus 1).
     void prev(){
         if(mode == 1){
             int v = entries[currentEntrie]->getSetting();
@@ -75,6 +91,7 @@ public:
         }
         
     }
+    /// Wechselt zwischen Navigationsmodus (0) und Einstellungsmodus (1).
     void nextMode(){
         if(entries[currentEntrie]->getSetting()==MenuEntry::NO_SETTINGS)
             return;
@@ -82,12 +99,15 @@ public:
         else if(mode == 1) mode = 0;
         render();
     }
+    /// Gibt den aktuellen Menüeintrag-Index zurück.
     int getCurrentEntrie(){
         return currentEntrie;
     }
+    /// Gibt die Einstellung des aktuellen Menüeintrags zurück.
     int getCurrentTypeSetting(){
         return entries[currentEntrie]->getSetting();
     }
+    /// Setzt den aktuellen Menüeintrag, falls gültig.
     bool setCurrentEntrie(int entrie){
         if(entrie <0 | entrie >= entries.size())
             return false;
@@ -95,9 +115,11 @@ public:
         currentEntrie = entrie;
         return true;
     }
+    /// Setzt die Einstellung des aktuellen Menüeintrags.
     void setCurrentTypeSetting(int setting){
         entries[currentEntrie]->setSetting(setting);
     }
+    /// Setzt den I2C-Erkennungsstatus.
     void setDetected(bool detected){
         this->isDetected = detected;
     }

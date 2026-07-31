@@ -1,3 +1,7 @@
+/// <summary>
+/// Erstellt Bausteine auf dem Spielfeld basierend auf einer Anleitung (Instruction) oder WebSocket-Daten.
+/// Unterstützt verzögerte und sofortige Erstellung sowie das Entfernen und Ändern von Bausteinen.
+/// </summary>
 using System.Collections;
 using QuantenKoffer.Bricks;
 using QuantenKoffer.Case;

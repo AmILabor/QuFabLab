@@ -1,3 +1,7 @@
+/// <summary>
+/// Zerlegt JSON-Strings aus WebSocket-Nachrichten in WebsocketData-Objekte und verarbeitet sie.
+/// Enthält die Datenstrukturen für WebSocket-Kommunikation und Befehlsverarbeitung.
+/// </summary>
 using System.Collections.Generic;
 using QuantenKoffer.Bricks;
 using QuantenKoffer.Case;

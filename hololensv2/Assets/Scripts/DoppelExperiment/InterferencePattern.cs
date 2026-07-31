@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Berechnung und Darstellung des Interferenzmusters beim Doppelspalt-Experiment.
+/// </summary>
 using Microsoft.MixedReality.Toolkit.Utilities;
 using System;
 using System.Collections.Generic;

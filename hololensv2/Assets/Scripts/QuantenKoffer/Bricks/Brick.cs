@@ -1,3 +1,8 @@
+/// <summary>
+/// Basisklasse für alle Bausteine (Bricks) im Quantenkoffer.
+/// Enthält die grundlegende Funktionalität für Laserbearbeitung, Rotation, Positionierung auf dem Grid
+/// und Fehleranzeige. Jeder Brick hat ein Center-Child-Objekt als Zielpunkt für Laserstrahlen.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// Enthält die abstrakte Basisklasse zur Positionierung von Objekten anhand räumlicher QR-Code-Koordinaten.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.MixedReality.Toolkit.Utilities;
@@ -8,6 +11,9 @@ using UnityEngine;
 
 namespace MRTKExtensions.QRCodes
 {
+    /// <summary>
+    /// Abstrakte Basisklasse zum Setzen der Position eines GameObjects basierend auf einem räumlichen Koordinatensystem eines QR-Codes.
+    /// </summary>
     public abstract class SpatialGraphCoordinateSystemSetter : MonoBehaviour
     {
         public EventHandler<Pose> PositionAcquired;
@@ -15,6 +21,11 @@ namespace MRTKExtensions.QRCodes
 
         private Queue<Tuple<Guid, float>> locationIdSizes = new Queue<Tuple<Guid, float>>();
 
+        /// <summary>
+        /// Fügt eine neue Positionsanfrage mit der ID des räumlichen Knotens und der physischen Seitenlänge zur Warteschlange hinzu.
+        /// </summary>
+        /// <param name="spatialGraphNodeId">Die ID des räumlichen Graphknotens.</param>
+        /// <param name="physicalSideLength">Die physische Seitenlänge des QR-Codes.</param>
         public void SetLocationIdSize(Guid spatialGraphNodeId, float physicalSideLength)
         {
             locationIdSizes.Enqueue(new Tuple<Guid, float>(spatialGraphNodeId, physicalSideLength));
@@ -29,8 +40,18 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Aktualisiert die Position basierend auf der räumlichen Knoten-ID und der physischen Größe.
+        /// </summary>
+        /// <param name="spatialGraphNodeId">Die ID des räumlichen Graphknotens.</param>
+        /// <param name="physicalSideLength">Die physische Seitenlänge des QR-Codes.</param>
         protected abstract void UpdateLocation(Guid spatialGraphNodeId, float physicalSideLength);
 
+        /// <summary>
+        /// Berechnet die Pose aus der relativen Positionsmatrix und verschiebt sie zur Mitte des QR-Codes.
+        /// </summary>
+        /// <param name="relativePose">Die relative Transformationsmatrix.</param>
+        /// <param name="physicalSideLength">Die physische Seitenlänge des QR-Codes.</param>
         protected void CalculatePosition(System.Numerics.Matrix4x4? relativePose, float physicalSideLength)
         {
             if (relativePose == null)
@@ -70,6 +91,11 @@ namespace MRTKExtensions.QRCodes
             MovePoseToCenter(pose,physicalSideLength);
         }
 
+        /// <summary>
+        /// Verschiebt die Pose zur Mitte des QR-Codes und rotiert sie entsprechend.
+        /// </summary>
+        /// <param name="pose">Die zu verschiebende Pose.</param>
+        /// <param name="physicalSideLength">Die physische Seitenlänge des QR-Codes.</param>
         protected void MovePoseToCenter(Pose pose,float physicalSideLength)
         {
             // Rotate 90 degrees 'forward' over 'right' so 'up' is pointing straight up from the QR code
@@ -84,6 +110,10 @@ namespace MRTKExtensions.QRCodes
 
         private Pose? lastPose;
 
+        /// <summary>
+        /// Überprüft die Position auf Stabilität und löst bei Übereinstimmung das PositionAcquired-Ereignis aus.
+        /// </summary>
+        /// <param name="pose">Die zu überprüfende Pose.</param>
         private void CheckPosition(Pose pose)
         {
             if (lastPose == null)

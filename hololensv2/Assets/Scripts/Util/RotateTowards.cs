@@ -1,3 +1,6 @@
+/// <summary>
+/// Dreht ein GameObject in Richtung eines Ziel-Transforms.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

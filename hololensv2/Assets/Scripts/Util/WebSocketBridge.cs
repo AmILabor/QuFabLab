@@ -1,3 +1,7 @@
+/// <summary>
+/// Stellt eine WebSocket-Verbindung her und ermöglicht das Senden und Empfangen von Nachrichten.
+/// Unterstützt Verbindungsaufbau über IP-Adresse (auch aus QR-Codes) und automatische Wiederverbindung.
+/// </summary>
 using MRTKExtensions.QRCodes;
 using UnityEngine.Events;
 using UnityEngine;

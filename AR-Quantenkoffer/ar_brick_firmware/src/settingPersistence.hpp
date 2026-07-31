@@ -1,9 +1,17 @@
+/**
+ * @file settingPersistence.hpp
+ * @brief Verwaltet das dauerhafte Speichern und Laden von
+ * Baustein-Typ und -Einstellungen im Flash-Speicher (EEPROM-Emulation).
+ */
+
 #include "Arduino.h"
 #include <FlashStorage_SAMD.h>
 
+/// Verwaltet das Speichern und Laden von Brick-Typ und -Einstellungen im Flash.
 class SettingsPersistence{
-    public:       
-        SettingsPersistence(){};
+    public:
+        SettingsPersistence(){}; ///< Standardkonstruktor.
+        /// Speichert Typ und/oder Einstellung, falls geändert, und committed.
         bool persist(uint8_t type, int setting){
             bool persistet = false;
             Serial.print("Persisting.... ");
@@ -23,18 +31,23 @@ class SettingsPersistence{
             }
             return persistet;
         };
+        /// Lädt Typ und Einstellung aus dem Flash-Speicher.
         void load(){
             _setting = loadSetting();
             _type = loadType();
         }
+        /// Gibt den gespeicherten Brick-Typ zurück.
         uint8_t getType(){return _type;};
+        /// Gibt die gespeicherte Einstellung zurück.
         int getSetting(){return _setting;};
     private:
+        /// Schreibt den Brick-Typ in den EEPROM.
         bool persistType(){
             Serial.println("Persisting Type "+String(_type));
             EEPROM.put(TypeRegister,_type);
             return true;
         };
+        /// Schreibt die Einstellung (als MSB/LSB) in den EEPROM.
         bool persistSetting(){
             Serial.println("Persisting Setting "+String(_setting));
             byte settingmsb = _setting >>8;
@@ -43,6 +56,7 @@ class SettingsPersistence{
             EEPROM.put(SettingsRegister1,settingmsb);
             return true;
         };
+        /// Lädt den Brick-Typ aus dem EEPROM.
         uint8_t loadType(){
             uint8_t result;
             result = EEPROM.read(TypeRegister);
@@ -50,6 +64,7 @@ class SettingsPersistence{
 
             return result;
         }
+        /// Lädt die Einstellung (MSB/LSB) aus dem EEPROM.
         int loadSetting(){
             byte resultlsb, resultmsb;
             int result = 0;

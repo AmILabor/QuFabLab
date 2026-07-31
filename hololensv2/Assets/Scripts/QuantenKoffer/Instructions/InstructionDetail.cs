@@ -1,3 +1,7 @@
+/// <summary>
+/// Enthält alle Informationen für einen einzelnen Schritt einer Anleitung.
+/// Definiert Beschreibung, Positionen und Prüflogik für einen Schritt.
+/// </summary>
 using System.Collections.Generic;
 using System.Linq;
 using QuantenKoffer.Bricks;

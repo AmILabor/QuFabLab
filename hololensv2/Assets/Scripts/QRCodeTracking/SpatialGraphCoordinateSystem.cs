@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/// <summary>
+/// Stellt Funktionen zur Verwaltung räumlicher Koordinatensysteme für QR-Codes bereit.
+/// </summary>
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.OpenXR;
@@ -19,6 +22,9 @@ namespace AMI.QRTracking
 #endif
         private System.Guid id;
 
+        /// <summary>
+        /// Ruft die eindeutige ID des räumlichen Koordinatensystems ab oder legt sie fest.
+        /// </summary>
         public System.Guid Id
         {
             get { return id; }
@@ -28,7 +34,7 @@ namespace AMI.QRTracking
                 id = value;
 #if WINDOWS_UWP
                 CoordinateSystem =
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Windows.Perception.Spatial.Preview.SpatialGraphInteropPreview.CreateCoordinateSystemForNode(id);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Windows.Perception.Spatial.Preview.SpatialGraphInteropPreview.CreateCoordinateSystemForNode(id);
                 if (CoordinateSystem == null)
                 {
                     Debug.Log("Id= " + id + " Failed to acquire coordinate system");
@@ -37,11 +43,16 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Wird beim Laden der Instanz aufgerufen.
+        /// </summary>
         void Awake()
         {
         }
 
-        // Use this for initialization
+        /// <summary>
+        /// Initialisiert das Koordinatensystem beim Start.
+        /// </summary>
         void Start()
         {
 #if WINDOWS_UWP
@@ -57,6 +68,9 @@ namespace AMI.QRTracking
 #endif
         }
 
+        /// <summary>
+        /// Aktualisiert die Position und Rotation des GameObjects basierend auf dem räumlichen Koordinatensystem.
+        /// </summary>
         private void UpdateLocation()
         {
             {
@@ -139,7 +153,9 @@ namespace AMI.QRTracking
             }
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Wird pro Frame aufgerufen und aktualisiert die Position.
+        /// </summary>
         void Update()
         {
             UpdateLocation();

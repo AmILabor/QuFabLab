@@ -1,3 +1,11 @@
+/**
+ * @file Periscope.hpp
+ * @brief Menüeintrag für den Periskop-Baustein (ohne Einstellungen).
+ * 
+ * Zeichnet eine Periskop-Darstellung im TFT-Display.
+ * Dieser Baustein hat keine konfigurierbaren Einstellungen.
+ */
+
 #include "MenuStructure/MenuEntries/menuEntry.hpp"
   /**
    *    1   3
@@ -12,6 +20,7 @@
 class PeriscopeEntrie: public MenuEntry{
     public:
         PeriscopeEntrie(Adafruit_GC9A01A * display) : MenuEntry(display){};
+        /// Zeichnet das Periskop mit ein- und ausgehenden Laserstrahlen.
         void render(){
             display->fillRoundRect(xBgStart,yBgStart,bgWidth,bgHeight,bgRadius,bgBlue); // Draw Background
             display->fillRect(xBgStart,yBoxStart+boxHeight-laserSpacing-laserBarThickness,laserBarLength,laserBarThickness,red);  // Laserbeam left to center
@@ -21,7 +30,9 @@ class PeriscopeEntrie: public MenuEntry{
             display->fillTriangle(xBoxStart+boxRadius,yBoxStart+boxHeight,xBoxStart+boxWidth,yBoxStart+boxHeight-triangleYSpacing,xBoxStart+boxWidth,yBoxStart+boxHeight,bgBlue); // bottom blue triangle
             DrawHeadline(headline);
         }
+        /// Hat keine Einstellungen.
         int getSetting(){return MenuEntry::NO_SETTINGS;};
+        /// Setzen der Einstellung wird ignoriert.
         void setSetting(int value){};
     protected:
         String headline ="Periskop";

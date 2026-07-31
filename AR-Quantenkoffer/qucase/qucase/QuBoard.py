@@ -1,3 +1,11 @@
+"""Physisches QuBoard für den Quantenkoffer.
+
+Verwaltet das Spielfeld aus 8×11 Feldern mit GPIO-gesteuerter
+Abtastung und I2C-Kommunikation mit den QuBricks.
+Erkennt das Platzieren und Entfernen von Bausteinen,
+überwacht deren Zustand und steuert die LED-Anzeigen.
+"""
+
 import time
 
 import config
@@ -11,6 +19,7 @@ from .QuBrick import QuBrick
 logger = logging.getLogger("QuBoard")
 
 
+# Steuert die Hardware-Matrix des Quantenkoffers
 class QuBoard:
     _inputs = config.INPUTS
     _outputs = config.OUTPUTS
@@ -28,6 +37,7 @@ class QuBoard:
         {"x": 4, "y": 0, "rotation": 3, "type": 2},
     ]
 
+    # Initialisiert das Board: GPIOs, I2C, Zustandsmatrizen und Callback-Listen
     def __init__(self):
         self.state_changed = False
         self.error = None
@@ -49,28 +59,35 @@ class QuBoard:
         self.addresses = []
         logger.info("Board Setup Done!")
 
+    # Registriert einen Callback für neu platzierte QuBricks
     def register_brick_add_callback(self, cb):
         self.brick_add_callbacks.append(cb)
 
+    # Registriert einen Callback für entfernte QuBricks
     def register_brick_remove_callback(self, cb):
         self.brick_remove_callbacks.append(cb)
 
+    # Registriert einen Callback für Aktualisierungen (z. B. geänderter Setting-Wert)
     def register_brick_update_callback(self, cb: object) -> object:
         self.brick_update_callbacks.append(cb)
 
+    # Registriert einen Callback für den Laser-Start-Button
     def register_start_laser_callback(self, cb):
         self.start_laser_callbacks.append(cb)
 
+    # Erzeugt eine 2D-Liste (Ausgänge × Eingänge) für die Zustände
     def __setup_state_board(self):
         n_inputs = len(self._inputs)
         n_outputs = len(self._outputs)
         self.state_board = [[0 for __ in range(n_inputs)] for _ in range(n_outputs)]
 
+    # Erzeugt eine 2D-Liste (Ausgänge × Eingänge) für die QuBrick-Referenzen
     def __setup_brick_board(self):
         n_inputs = len(self._inputs)
         n_outputs = len(self._outputs)
         self.brick_board = [[None for __ in range(n_inputs)] for _ in range(n_outputs)]
 
+    # Richtet alle GPIOs ein: Ausgänge, Eingänge, LEDs und Interrupt-Pins
     def __setup_gpios(self):
         GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
@@ -85,6 +102,7 @@ class QuBoard:
         for led_pin in config.LED_GPIOS:
             GPIO.setup(led_pin, GPIO.OUT)
 
+    # Richtet den I2C-Bus ein und prüft, ob beim Start bereits QuBricks angeschlossen sind
     def __setup_i2c(self):
         self.i2c = busio.I2C(board.SCL, board.SDA)
         devices = self.i2c.scan()
@@ -92,6 +110,7 @@ class QuBoard:
             logger.error("There are connected QuBricks on Startup")
             raise Exception("Please disconnect all QuBricks on startup!")
 
+    # Scannt den I2C-Bus mehrfach, um neue Adressen sicher zu erkennen
     def __scan_i2c_bus(self):
         retries = 5
         changed = []
@@ -104,6 +123,7 @@ class QuBoard:
                 break
         return changed
 
+    # Prüft, ob der Laser-Start-Button gedrückt wurde (mit Entprell-Timeout)
     def __scan_start_laser(self):
         if time.time()-self.last_laser_fired < self._laser_fire_timeout:
             return
@@ -115,16 +135,10 @@ class QuBoard:
                 cb(registered)
         self.laser_fired = registered
 
+    # Prüft auf Board- oder Baustein-Fehler und gibt an, ob sich der Fehlerzustand geändert hat
     def _check_error_and_set_led(self) -> tuple[bool, bool]:
-        """
-        Check if there is any error on the board or bricks.
-        Returns (error_detected, has_changed).
-        Does not change GPIOs directly; caller should update LEDs when `has_changed` is True.
-        """
-        # Check for board-level error
         error_detected = self.error is not None
 
-        # Check if any brick has a read error
         if not error_detected:
             for brick in self.get_bricks():
                 if getattr(brick, "read_error", False):
@@ -136,16 +150,11 @@ class QuBoard:
 
         if error_detected:
             logger.warning("Error detected on board or bricks")
-        # else:
-        #     logger.info("No errors detected on board or bricks")
 
         return error_detected, has_changed
             
+    # Prüft, ob alle erforderlichen QuBricks korrekt positioniert und konfiguriert sind
     def check_setup_complete(self) -> tuple[bool, list[str]]:
-        """
-        Check if all required QuBricks are in place with correct rotation and type.
-        Returns (is_complete, has_changed).
-        """
         errors: list[str] = []
 
         for req in self.REQUIRED_BRICK_CONFIG:
@@ -154,36 +163,29 @@ class QuBoard:
             except Exception:
                 brick = None
 
-            # Check if brick exists at position
             if brick is None:
                 error_msg = f"No brick at position ({req['x']}, {req['y']})"
-                # logger.warning(f"Setup incomplete: {error_msg}")
                 errors.append(error_msg)
                 continue
 
-            # Check rotation
             if getattr(brick, "rotation", None) != req["rotation"]:
                 error_msg = f"Brick at ({req['x']}, {req['y']}) has wrong rotation: expected {req['rotation']}, got {getattr(brick, 'rotation', None)}"
-                # logger.warning(f"Setup incomplete: {error_msg}")
                 errors.append(error_msg)
 
-            # Check type
             if getattr(brick, "type", None) != req["type"]:
                 error_msg = f"Brick at ({req['x']}, {req['y']}) has wrong type: expected {req['type']}, got {getattr(brick, 'type', None)}"
-                # logger.warning(f"Setup incomplete: {error_msg}")
                 errors.append(error_msg)
 
         is_complete = len(errors) == 0
         has_changed = is_complete != getattr(self, "setup_complete", False)
         self.setup_complete = is_complete
 
-        # if is_complete:
-        # #     logger.warning(f"Setup incomplete with {len(errors)} error(s): {errors}")
-        # # else:
-        #     logger.info("Setup check: all required bricks present and correct")
+        if is_complete:
+            logger.info("Setup check: all required bricks present and correct")
 
-        # return is_complete, has_changed
+        return is_complete, has_changed
 
+    # Fügt einen neuen QuBrick an der gegebenen Position hinzu (I2C-Scan + Register-Lesen)
     def add_qubrick(self, x, y) -> QuBrick:
         changed = self.__scan_i2c_bus()
         if len(changed) == 0:
@@ -193,13 +195,13 @@ class QuBoard:
         logger.info(f"Adding QuBrick at Position {x},{y} @{changed[0]}")
         self.brick_board[x][y] = QuBrick(self.i2c, changed[0], x, y)
         self.brick_board[x][y].fetch()
-        #self.brick_board[x][y].store_settings_to_brick()
         self.state_board[x][y] = True
 
         for cb in self.brick_add_callbacks:
             cb(self.brick_board[x][y])
         return self.brick_board[x][y]
 
+    # Entfernt einen QuBrick von der angegebenen Position und aktualisiert die Adressliste
     def remove_qubrick(self, x, y):
         GPIO.output(config.LED_GPIOS[2], GPIO.LOW)
         if self.brick_board[x][y] is None:
@@ -215,16 +217,18 @@ class QuBoard:
         self.brick_board[x][y] = None
         self.state_board[x][y] = False
 
+    # Prüft, ob neue I2C-Teilnehmer (QuBricks) erschienen sind
     def scan_for_new_participants(self):
         address_changes = self.i2c.scan()
         return len(self.addresses) < len(address_changes)
 
+    # Haupt-Scan-Schleife: prüft Laser-Button und tastet die Matrix auf neue Bausteine ab
     def scan(self):
         self.__scan_start_laser()
         if not self.scan_for_new_participants():
             GPIO.output(config.LED_GPIOS[2], GPIO.HIGH)
             return
-        GPIO.output(config.LED_GPIOS[2], GPIO.LOW) # Green LED to low when QuBrick is added
+        GPIO.output(config.LED_GPIOS[2], GPIO.LOW)
         logger.info("New Participant discovered via i2c. Scanning the matrix to determine its position.")
         for x, output_pin in enumerate(self._outputs):
             GPIO.output(output_pin, GPIO.HIGH)
@@ -237,8 +241,8 @@ class QuBoard:
                     if current_state:
                         self.add_qubrick(x, y)
             GPIO.output(output_pin, GPIO.LOW)
-        # Note: error and setup checks are handled in update_bricks only
     
+    # Aktualisiert alle Bausteine (I2C-Fetch), behandelt Fehler und steuert die LEDs
     def update_bricks(self):
         rows = len(self.brick_board)
         for x in range(rows):
@@ -256,10 +260,8 @@ class QuBoard:
                     for cb in self.brick_update_callbacks:
                         cb(current_brick)
             
-        # Clear error if no bricks have errors
         if self.error and self.error.startswith("Brick read error"):
             self.error = None
-        # Check error state and update red LED only when status changed
         error_detected, error_changed = self._check_error_and_set_led()
         if error_changed:
             red_led = config.LED_GPIOS[0]
@@ -269,7 +271,6 @@ class QuBoard:
             else:
                 logger.info("Errors cleared. Red LED disabled.")
 
-        # Update setup-complete status and set yellow LED only when status changed
         is_complete, has_changed = self.check_setup_complete()
         if has_changed:
             yellow_led = config.LED_GPIOS[1]
@@ -279,6 +280,7 @@ class QuBoard:
             else:
                 logger.warning("Setup no longer complete. Yellow LED disabled.")
 
+    # Gibt eine Liste aller aktuell platzierten QuBricks zurück
     def get_bricks(self) -> list[QuBrick]:
         r = []
         for x in range(len(self.brick_board)):
@@ -288,5 +290,6 @@ class QuBoard:
                     r.append(row[y])
         return r
 
+    # Gibt den QuBrick an der angegebenen Position zurück (oder None)
     def get_brick(self, x, y) -> QuBrick:
         return self.brick_board[x][y]

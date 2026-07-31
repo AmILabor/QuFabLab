@@ -1,3 +1,7 @@
+/// <summary>
+/// 90°-Spiegel-Baustein. Ermöglicht die Phasenverschiebungseinstellung durch Verschieben des Center-Child-Objekts.
+/// Leitet den eingehenden Laserstrahl in dieselbe Richtung weiter.
+/// </summary>
 using Microsoft.MixedReality.Toolkit;
 using QuantenKoffer.Laser;
 using Unity.XR.CoreUtils;

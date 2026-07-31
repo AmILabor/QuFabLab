@@ -1,3 +1,6 @@
+/// <summary>
+/// Bewegt den zugehörigen Transform um einen konfigurierbaren Betrag, entweder lokal oder global.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

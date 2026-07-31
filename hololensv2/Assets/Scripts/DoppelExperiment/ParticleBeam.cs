@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Erzeugung eines Partikelstrahls im Doppelspalt-Experiment.
+/// </summary>
 using System;
 using System.Collections;
 using System.Collections.Generic;

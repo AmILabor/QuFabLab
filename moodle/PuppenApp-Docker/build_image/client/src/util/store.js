@@ -1,3 +1,8 @@
+/**
+ * Vuex-Store der PuppenApp.
+ * Verwaltet den globalen Zustand: Liste der Puppen, Detailinformationen,
+ * verfügbare Farben/Haarfarben/Handler, sowie Authentifizierungs-Token.
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -5,29 +10,35 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-        puppets: [],
-        details: {},
-        token: null,
-        colors: [],
-        hair_colors: [],
-        handlers: [],
+        puppets: [],       // Liste aller Puppen
+        details: {},       // Details pro Puppe (Key = ID)
+        token: null,       // Authentifizierungs-Token
+        colors: [],        // Verfügbare Hautfarben
+        hair_colors: [],   // Verfügbare Haarfarben
+        handlers: [],      // Verfügbare Handler (Betreuer)
     },
     mutations: {
+        // Setzt die komplette Puppenliste
         setPuppets(state, puppets) {
             state.puppets = puppets
         },
+        // Fügt eine einzelne Puppe ins details-Objekt ein
         setPuppet(state, puppet) {
             Vue.set(state.details, puppet.id, puppet)
         },
+        // Setzt die Liste der Hautfarben
         setColors(state, colors) {
             state.colors = colors
         },
+        // Setzt die Liste der Haarfarben
         setHairColors(state, hair_colors) {
             state.hair_colors = hair_colors
         },
+        // Setzt die Liste der Handler
         setHandlers(state, handlers) {
             state.handlers = handlers
         },
+        // Setzt oder löscht den Authentifizierungs-Token (inkl. localStorage)
         setToken(state, token) {
             if (token) {
                 state.token = "Token " + token
@@ -40,6 +51,7 @@ export const store = new Vuex.Store({
         }
     },
     actions: {
+        // Lädt alle Puppen von der API
         getPuppets({commit, state}) {
             if (state.token) {
                 return fetch("/api/puppets/", {
@@ -60,6 +72,7 @@ export const store = new Vuex.Store({
                     })
             }
         },
+        // Lädt Details einer einzelnen Puppe von der API
         getPuppet({commit, state}, id) {
             if (state.token) {
                 return fetch("/api/puppet/" + id + "/", {
@@ -80,6 +93,7 @@ export const store = new Vuex.Store({
                     })
             }
         },
+        // Lädt verfügbare Hautfarben von der API
         getColors({commit, state}) {
             if (state.token) {
                 return fetch("/api/colors/", {
@@ -100,6 +114,7 @@ export const store = new Vuex.Store({
                     })
             }
         },
+        // Lädt verfügbare Haarfarben von der API
         getHairColors({commit, state}) {
             if (state.token) {
                 return fetch("/api/haircolors/", {
@@ -120,6 +135,7 @@ export const store = new Vuex.Store({
                     })
             }
         },
+        // Lädt verfügbare Handler von der API
         getHandlers({commit, state}) {
             if (state.token) {
                 return fetch("/api/handlers/", {
@@ -142,39 +158,51 @@ export const store = new Vuex.Store({
         },
     },
     getters: {
+        // Gibt die gesamte Puppenliste zurück
         puppets(state) {
             return state.puppets
         },
+        // Gibt das gesamte details-Objekt zurück
         details(state) {
             return state.details
         },
+        // Gibt die Details einer bestimmten Puppe per ID zurück
         detail: (state) => (id) => {
             return state.details[id]
         },
+        // Gibt die Issues einer bestimmten Puppe zurück
         issues: (state, getters) => (id) => {
             return getters.detail(id).issues
         },
+        // Gibt die Liste aller Hautfarben zurück
         colors(state) {
             return state.colors
         },
+        // Gibt die Liste aller Haarfarben zurück
         hair_colors(state) {
             return state.hair_colors
         },
+        // Gibt eine bestimmte Hautfarbe anhand der ID zurück
         color: (state, getters) => (id) => {
             return getters.colors.find(color => color.id === id)
         },
+        // Gibt eine bestimmte Haarfarbe anhand der ID zurück
         hair_color: (state, getters) => (id) => {
             return getters.hair_colors.find(hair_color => hair_color.id === id)
         },
+        // Gibt die Liste aller Handler zurück
         handlers(state) {
             return state.handlers
         },
+        // Gibt einen bestimmten Handler anhand der ID zurück
         handler: (state, getters) => (id) => {
             return getters.handlers.find(handler => handler.id === id)
         },
+        // Gibt ein bestimmtes Issue einer Puppe anhand von Puppen-ID und Issue-ID zurück
         issue: (state, getters) => (puppetId, issueId) => {
             return getters.issues(puppetId).find(issue => issue.id === issueId)
         },
+        // Gibt den aktuellen Authentifizierungs-Token zurück
         token(state) {
             return state.token
         }

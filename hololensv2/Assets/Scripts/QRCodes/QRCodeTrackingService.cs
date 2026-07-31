@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Implementierung des QR-Code-Tracking-Dienstes für MRTK.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,9 @@ using UnityEngine;
 
 namespace MRTKExtensions.QRCodes
 {
+    /// <summary>
+    /// Implementierung des QR-Code-Tracking-Dienstes für die Mixed Reality Toolkit-Erweiterung.
+    /// </summary>
     [MixedRealityExtensionService(SupportedPlatforms.WindowsUniversal)]
     public class QRCodeTrackingService : BaseExtensionService, IQRCodeTrackingService
     {
@@ -41,11 +47,17 @@ namespace MRTKExtensions.QRCodes
         private readonly List<string> messageList = new List<string>();
 
 
+        /// <summary>
+        /// Initialisiert den QR-Code-Tracker asynchron.
+        /// </summary>
         public override void Initialize()
         {
             _ = InitializeTracker();
         }
 
+        /// <summary>
+        /// Initialisiert den QR-Code-Watcher und fordert die erforderliche Berechtigung an.
+        /// </summary>
         private async Task InitializeTracker()
         {
             try
@@ -71,6 +83,10 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Verarbeitet das Ergebnis der Zugriffsberechtigungsanfrage.
+        /// </summary>
+        /// <param name="ast">Der Status der Zugriffsberechtigung.</param>
         private void ProcessTrackerCapabilityReturned(QRCodeWatcherAccessStatus ast)
         {
             if (ast != QRCodeWatcherAccessStatus.Allowed)
@@ -81,6 +97,9 @@ namespace MRTKExtensions.QRCodes
             accessStatus = ast;
         }
 
+        /// <summary>
+        /// Wird pro Frame aufgerufen und richtet das Tracking ein, sobald die Berechtigung vorliegt.
+        /// </summary>
         public override void Update()
         {
             if (qrTracker == null && accessStatus == QRCodeWatcherAccessStatus.Allowed)
@@ -89,6 +108,9 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Richtet den QR-Code-Watcher ein und meldet die Initialisierung.
+        /// </summary>
         private void SetupTracking()
         {
             qrTracker = new QRCodeWatcher();
@@ -98,12 +120,20 @@ namespace MRTKExtensions.QRCodes
             SendProgressMessage("QR tracker initialized");
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn ein QR-Code aktualisiert wurde, und löst das QRCodeFound-Ereignis aus.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten mit dem aktualisierten QR-Code.</param>
         private void QRCodeWatcher_Updated(object sender, QRCodeUpdatedEventArgs e)
         {
             SendProgressMessage($"Found QR code {e.Code.Data}");
             QRCodeFound?.Invoke(this, new QRInfo(e.Code));
         }
 
+        /// <summary>
+        /// Aktiviert das QR-Code-Tracking.
+        /// </summary>
         public override void Enable()
         {
             base.Enable();
@@ -124,6 +154,9 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Deaktiviert das QR-Code-Tracking.
+        /// </summary>
         public override void Disable()
         {
             base.Disable();
@@ -135,6 +168,10 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Behandelt einen Initialisierungsfehler und setzt die entsprechenden Statusvariablen.
+        /// </summary>
+        /// <param name="message">Die Fehlermeldung.</param>
         private void InitializationFail(string message)
         {
             SendProgressMessage(message);
@@ -142,6 +179,10 @@ namespace MRTKExtensions.QRCodes
             InitializationFailed = true;
         }
 
+        /// <summary>
+        /// Sendet eine Fortschrittsmeldung, falls das Profil dies zulässt.
+        /// </summary>
+        /// <param name="msg">Die zu sendende Nachricht.</param>
         private void SendProgressMessage(string msg)
         {
             if (!profile.ExposedProgressMessages)

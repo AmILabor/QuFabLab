@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Positionierung des AR-Koffers mittels QR-Code-Erkennung.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using MRTKExtensions.QRCodes;

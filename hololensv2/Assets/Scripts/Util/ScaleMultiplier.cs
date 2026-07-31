@@ -1,3 +1,7 @@
+/// <summary>
+/// Multipliziert die Skalierung und setzt optional die Position des zugehörigen GameObjects.
+/// Kann auf den Editor-Modus beschränkt werden.
+/// </summary>
 using UnityEngine;
 
 namespace AMI.Util{  

@@ -1,3 +1,7 @@
+/// <summary>
+/// 45°-Spiegel-Baustein. Reflektiert eingehende Laserstrahlen im 45°-Winkel.
+/// Berechnet die Ausgangsvektoren basierend auf der Normalisierung der Eingangsrichtung.
+/// </summary>
 using AMI.Util;
 using Microsoft.MixedReality.Toolkit;
 using QuantenKoffer.Laser;

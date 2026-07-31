@@ -1,3 +1,6 @@
+/// <summary>
+/// Führt ein im Inspector konfigurierbares UnityEvent beim Aktivieren und/oder Deaktivieren des Objekts aus.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

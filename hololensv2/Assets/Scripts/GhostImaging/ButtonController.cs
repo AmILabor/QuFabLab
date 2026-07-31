@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält Steuerungsklassen für das Ghost-Imaging-Experiment.
+/// </summary>
 using System;
 using System.Collections;
 using System.Collections.Generic;

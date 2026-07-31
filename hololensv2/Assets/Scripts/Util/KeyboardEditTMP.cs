@@ -1,3 +1,7 @@
+/// <summary>
+/// Macht ein TMP_Text-Element über die AR-Tastatur bearbeitbar.
+/// Zeigt die AR-Tastatur an und übernimmt den eingegebenen Text.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

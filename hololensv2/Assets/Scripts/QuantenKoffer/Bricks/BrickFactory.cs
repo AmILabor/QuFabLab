@@ -1,3 +1,7 @@
+/// <summary>
+/// Fabrikklasse zum Erstellen von Brick-Instanzen (Spiegel 45°, Spiegel 90°, Strahlteiler, Periskope).
+/// Enthält die Erstellungslogik und das Prefab-Management für alle Baustein-Typen.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.Input;
@@ -9,6 +13,9 @@ using UnityEngine.Networking;
 
 namespace QuantenKoffer.Bricks
 {
+    /// <summary>
+    /// Enum der verfügbaren Baustein-Typen in der Fabrik.
+    /// </summary>
     public enum BrickTypes
     {
         Mirror45,

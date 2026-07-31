@@ -1,3 +1,6 @@
+/// <summary>
+/// Sorgt dafür, dass ein Transform immer zur Kamera ausgerichtet ist (Billboard-Effekt).
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

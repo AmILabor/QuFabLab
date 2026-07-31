@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Menü-Steuerungsklasse zur Anpassung des Interferenzmusters im Doppelspalt-Experiment.
+/// </summary>
 using System;
 using System.Collections;
 using System.Collections.Generic;

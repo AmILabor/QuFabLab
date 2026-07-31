@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält ein Interface zur verzögerten Ausführung von Unity-Events im nächsten Frame.
+/// </summary>
 using System.Collections;
 using UnityEngine.Events;
 

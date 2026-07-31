@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält den Baustein für ein einzelnes Element des Array-Detektors im Ghost-Imaging-Experiment.
+/// </summary>
 using System.Collections;
 using System.Linq;
 using QuantenKoffer.Bricks;

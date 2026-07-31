@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Verwaltung der QR-Code-Eckpunkte für die Positionierung.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +8,9 @@ using Microsoft.MixedReality.QR;
 
 namespace AMI.QRTracking
 {
+    /// <summary>
+    /// Verwaltet die vier Eck-QR-Codes zur Bestimmung der Position und Skalierung eines Objekts.
+    /// </summary>
     public class QRCodeEdges : MonoBehaviour
     {
         [SerializeField]
@@ -14,6 +20,10 @@ namespace AMI.QRTracking
         [SerializeField] SpatialGraphCoordinateSystem edgePrefab;
         QRCode code;
 
+        /// <summary>
+        /// Wird aufgerufen, wenn ein neuer QR-Code erkannt wurde, und speichert die entsprechende Eckposition.
+        /// </summary>
+        /// <param name="args">Ereignisdaten mit dem hinzugefügten QR-Code.</param>
         public void QrCodeAdded(QRCodeAddedEventArgs args)
         {
             if (args.Code.Data == topLeftString)
@@ -53,6 +63,10 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn ein QR-Code aktualisiert wurde, und aktualisiert die entsprechende Eckposition.
+        /// </summary>
+        /// <param name="args">Ereignisdaten mit dem aktualisierten QR-Code.</param>
         public void QrCodeUpdated(QRCodeUpdatedEventArgs args)
         {
             if (args.Code.Data == topLeftString)

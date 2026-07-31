@@ -1,3 +1,7 @@
+/// <summary>
+/// Periskop-Baustein. Sendet Laserstrahlen vom Rand des Spielfelds aus und stoppt bei Kollision mit einem anderen Baustein.
+/// Implementiert die Laserstart-Logik und die Benachrichtigung bei erfolgreicher Weiterleitung.
+/// </summary>
 using Microsoft.MixedReality.Toolkit;
 using QuantenKoffer.Dialog;
 using QuantenKoffer.Laser;
@@ -5,17 +9,27 @@ using UnityEngine;
 
 namespace QuantenKoffer.Bricks
 {
+    /// <summary>
+    /// Periskop-Baustein, der Laserstrahlen vom Spielfeldrand aussendet und bei Kollision stoppt.
+    /// </summary>
     public class Periscope : Brick
     {
         [SerializeField] private GameObject LaserBeam;
         [SerializeField] private bool disabled = false;
 
+        /// <summary>
+        /// Startet den Laserstrahl des Periskops (für ContextMenu).
+        /// </summary>
         [ContextMenu("Start")]
         public void CallStartBeam()
         {
             StartBeam();
         }
 
+        /// <summary>
+        /// Setzt das Laserstrahl-Prefab für das Periskop.
+        /// </summary>
+        /// <param name="lb">Laserstrahl-Prefab</param>
         public void SetLaserBeam(GameObject lb)
         {
             LaserBeam = lb;

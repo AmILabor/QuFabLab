@@ -1,3 +1,7 @@
+/// <summary>
+/// Setzt den Text eines TMP_Text-Elements basierend auf einem Zahlenwert oder SliderEventData.
+/// Wird in Verbindung mit UnityEvents im Inspector verwendet.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UI;

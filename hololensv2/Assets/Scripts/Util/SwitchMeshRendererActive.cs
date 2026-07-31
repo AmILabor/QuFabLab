@@ -1,3 +1,6 @@
+/// <summary>
+/// Schaltet den aktiven Zustand einer MeshRenderer-Komponente um (an/aus).
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

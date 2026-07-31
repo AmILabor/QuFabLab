@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Klasse zur Verarbeitung von Partikelkollisionen im Doppelspalt-Experiment.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

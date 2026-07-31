@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// Enthält die Hauptklasse zur Verwaltung der QR-Code-Erkennung und -Ereignisse.
+/// </summary>
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,8 +43,14 @@ namespace AMI.QRTracking
         [Tooltip("Determines if the QR codes scanner should be automatically started.")]
         public bool AutoStartQRTracking = true;
 
+        /// <summary>
+        /// Gibt an, ob der QR-Code-Tracker derzeit läuft.
+        /// </summary>
         public bool IsTrackerRunning { get; private set; }
 
+        /// <summary>
+        /// Gibt an, ob die QR-Code-Erkennung auf dem Gerät unterstützt wird.
+        /// </summary>
         public bool IsSupported { get; private set; }
 
         /// <summary>
@@ -115,11 +124,16 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Wird beim Laden der Instanz aufgerufen.
+        /// </summary>
         protected void Awake()
         {
         }
 
-        // Use this for initialization
+        /// <summary>
+        /// Überprüft die Unterstützung und fordert Zugriff auf die QR-Code-Erkennung an.
+        /// </summary>
         async protected virtual void Start()
         {
             IsSupported = QRCodeWatcher.IsSupported();
@@ -299,11 +313,19 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn die Aufzählung der QR-Codes abgeschlossen ist.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten.</param>
         private void QRCodeWatcher_EnumerationCompleted(object sender, object e)
         {
             Debug.Log("QRCodesManager QrTracker_EnumerationCompleted");
         }
 
+        /// <summary>
+        /// Wird pro Frame aufgerufen und startet das QR-Tracking, sobald die Berechtigung vorliegt.
+        /// </summary>
         private void Update()
         {
             if (qrTracker == null && capabilityInitialized && IsSupported)

@@ -1,3 +1,7 @@
+/// <summary>
+/// Verwaltet das Dialogfenster, das beim Untersuchen eines Bausteins erscheint.
+/// Zeigt Typinformationen, Einstellungsoptionen und Aktionsbuttons (Löschen, Rotieren, Typ ändern) an.
+/// </summary>
 using System.Collections;
 using AMI.Util;
 using Microsoft.MixedReality.Toolkit;

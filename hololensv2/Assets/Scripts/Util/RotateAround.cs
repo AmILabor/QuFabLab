@@ -1,3 +1,7 @@
+/// <summary>
+/// Rotiert einen Transform basierend auf einem normalisierten Gleitkommawert um die lokale Z-Achse.
+/// Wird typischerweise mit einem Schieberegler gesteuert.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UI;

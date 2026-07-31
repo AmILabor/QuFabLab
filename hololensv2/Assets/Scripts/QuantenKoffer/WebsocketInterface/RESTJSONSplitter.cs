@@ -1,3 +1,6 @@
+/// <summary>
+/// Stellt die Datenstruktur für REST-API-Antworten bereit und zerlegt JSON-Strings in RESTData-Objekte.
+/// </summary>
 using UnityEngine;
 
 namespace QuantenKoffer.WebsocketInterface

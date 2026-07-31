@@ -1,3 +1,7 @@
+/// <summary>
+/// Steuert die Anzeige und Interaktion von Anleitungen im Quantenkoffer.
+/// Behandelt Schritt-für-Schritt-Anleitungen, Sprachausgabe und Hervorhebungen.
+/// </summary>
 using System.Collections;
 using System.Diagnostics;
 using Microsoft.MixedReality.Toolkit.Audio;

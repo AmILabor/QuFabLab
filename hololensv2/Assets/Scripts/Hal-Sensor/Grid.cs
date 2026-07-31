@@ -1,9 +1,16 @@
+/// <summary>
+/// Repräsentiert ein Raster für den Hall-Effekt-Sensor. Erzeugt und verwaltet eine Matrix von MagnetInfluenceColoring-Objekten
+/// zur Visualisierung des Magnetfeldeinflusses.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 namespace AMI.HAL{
+    /// <summary>
+    /// Repräsentiert ein Raster für den Hall-Effekt-Sensor zur Visualisierung von Magnetfeldeinflüssen.
+    /// </summary>
     public class Grid : MonoBehaviour{
 
         /// <summary>

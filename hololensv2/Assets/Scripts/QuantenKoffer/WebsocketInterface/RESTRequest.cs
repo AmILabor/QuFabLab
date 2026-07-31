@@ -1,3 +1,6 @@
+/// <summary>
+/// Führt HTTP-GET-Anfragen an eine angegebene URL aus und löst bei Antwort ein UnityEvent aus.
+/// </summary>
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;

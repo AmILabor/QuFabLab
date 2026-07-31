@@ -1,3 +1,8 @@
+/// <summary>
+/// Spiegelt das Spielfeld wider. Beinhaltet alle Methoden, die sich um das Positionieren
+/// von Spielsteinen auf dem Grid beziehen. Enthält Logik für Raster, Periskope, Hervorhebungen
+/// und Laser-Neuberechnung.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using QuantenKoffer.Bricks;
@@ -183,21 +188,39 @@ namespace QuantenKoffer.Case
             }
         }
 
+        /// <summary>
+        /// Setzt, ob die Spawn-Position belegt ist.
+        /// </summary>
+        /// <param name="occupied">Neuer Belegungszustand</param>
         public void SetSpawnPositionOccupied(bool occupied)
         {
             spawnPositionIsOccupied = occupied;
         }
 
+        /// <summary>
+        /// Gibt zurück, ob die Spawn-Position belegt ist.
+        /// </summary>
+        /// <returns>True, wenn die Spawn-Position belegt ist</returns>
         public bool IsSpawnPositionOccupied()
         {
             return spawnPositionIsOccupied;
         }
 
+        /// <summary>
+        /// Prüft, ob ein Periskop am angegebenen Index aktiv ist.
+        /// </summary>
+        /// <param name="index">Index des Periskops</param>
+        /// <returns>True, wenn das Periskop aktiv ist</returns>
         public bool IsPeriscopeActive(int index)
         {
             return periscopeContainer.IsPeriscopeActive(index);
         }
 
+        /// <summary>
+        /// Ermittelt den Periskop-Index anhand einer Gitterposition.
+        /// </summary>
+        /// <param name="position">Gitterposition</param>
+        /// <returns>Periskop-Index oder -1 wenn nicht gefunden</returns>
         public int GetPeriscopeIndexByPosition(Vector2Int position)
         {
             if (position.x == -1)
@@ -215,6 +238,11 @@ namespace QuantenKoffer.Case
             return -1;
         }
 
+        /// <summary>
+        /// Schaltet ein Periskop ein oder aus (erzeugt oder entfernt es).
+        /// </summary>
+        /// <param name="idx">Index des umzuschaltenden Periskops</param>
+        /// <returns>Das erstellte Periskop oder null, wenn es entfernt wurde</returns>
         public Brick TogglePeriscope(int idx)
         {
             if (!periscopeContainer.IsPeriscopeActive(idx))

@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält Klassen zur reflexionsbasierten Positionierung von Objekten.
+/// </summary>
 using System;
 using Unity.XR.CoreUtils;
 using UnityEditor;
@@ -5,6 +8,9 @@ using UnityEngine;
 
 namespace QuantenKoffer.Bricks
 {
+    /// <summary>
+    /// Platziert ein Objekt basierend auf der Reflexion eines Laserstrahls an einem Spiegel.
+    /// </summary>
     public class ReflectivePlacer : MonoBehaviour
 
     {
@@ -14,11 +20,17 @@ namespace QuantenKoffer.Bricks
         [SerializeField] private GameObject target;
         [SerializeField] private GameObject mirrorObject;
 
+        /// <summary>
+        /// Setzt die Initialisierung zurück, damit die Position neu berechnet wird.
+        /// </summary>
         public void SetReflectedPosition()
         {
             initialized = false;
         }
 
+        /// <summary>
+        /// Berechnet die reflektierte Position und Rotation für das Zielobjekt.
+        /// </summary>
         private void Update()
         {
             if (!initialized)

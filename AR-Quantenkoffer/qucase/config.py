@@ -1,3 +1,14 @@
+"""
+Konfigurationsdatei für QuCase.
+
+Definiert GPIO-Pin-Zuordnungen und I2C-Registeradressen
+für die Spielfeld-Matrix des QuBoard.
+"""
+
+# QuFabLab qucase configuration
+# Date: 2026-07-31
+# GPIO pin assignments and I2C register addresses for the QuBoard field matrix.
+
 # Output (Rows)
 OUTPUTS = [14,15,18,17,27,23]#, GPIO_ROW2]
 INPUTS = [24,8,21,20,16]

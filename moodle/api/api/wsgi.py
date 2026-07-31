@@ -1,10 +1,7 @@
 """
-WSGI config for api project.
+WSGI-Konfiguration für das api-Projekt.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
+Stellt die WSGI-Anwendung als modulweite Variable ``application`` bereit.
 """
 
 import os

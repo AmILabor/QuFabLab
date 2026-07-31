@@ -1,3 +1,7 @@
+/// <summary>
+/// Enthält die Klasse für den Strahlteiler-Baustein, der einen eingehenden Laserstrahl in zwei ausgehende Strahlen aufteilt
+/// und die Interferenzberechnung zwischen Strahlen verwaltet.
+/// </summary>
 using System.Collections.Generic;
 using QuantenKoffer.Laser;
 using UnityEngine;

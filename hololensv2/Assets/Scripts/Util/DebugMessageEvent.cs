@@ -1,3 +1,6 @@
+/// <summary>
+/// Zeigt Debug-Logmeldungen in einem TMP_Text-Element an. Unterstützt Seitenumblättern und Stack-Trace-Anzeige.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

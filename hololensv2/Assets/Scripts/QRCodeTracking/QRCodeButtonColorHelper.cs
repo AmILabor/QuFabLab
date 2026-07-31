@@ -1,8 +1,14 @@
+/// <summary>
+/// Enthält Hilfsklassen zur Farbverwaltung von QR-Code-Buttons.
+/// </summary>
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace QR_Code_Tracking
 {
+    /// <summary>
+    /// Hilfsklasse zum Ändern der Button-Farbe basierend auf dem QR-Code-Status.
+    /// </summary>
     public class QRCodeButtonColorHelper : MonoBehaviour
     {
         private bool isDone = false;
@@ -12,6 +18,9 @@ namespace QR_Code_Tracking
         [SerializeField] private GameObject[] IconGameObjects;
 
 
+        /// <summary>
+        /// Initialisiert die Farbe der Icon-GameObjects.
+        /// </summary>
         public void Start()
         {
             Renderer sr;
@@ -23,18 +32,28 @@ namespace QR_Code_Tracking
             }
         }
 
+        /// <summary>
+        /// Markiert alle Icons als erledigt über das Kontextmenü.
+        /// </summary>
         [ContextMenu("Done")]
         public void Done()
         {
             MarkAsDone();
         }
 
+        /// <summary>
+        /// Macht die Erledigt-Markierung aller Icons rückgängig über das Kontextmenü.
+        /// </summary>
         [ContextMenu("UnDone")]
         public void UnDone()
         {
             MarkAsDone(false);
         }
 
+        /// <summary>
+        /// Setzt den Erledigt-Status der Icons und aktualisiert die Farben.
+        /// </summary>
+        /// <param name="done">Gibt an, ob die Icons als erledigt markiert werden sollen.</param>
         public void MarkAsDone(bool done = true)
         {
             foreach (var sr in spriteRenderers)

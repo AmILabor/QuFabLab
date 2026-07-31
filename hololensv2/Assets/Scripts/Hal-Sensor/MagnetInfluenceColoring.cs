@@ -1,3 +1,8 @@
+/// <summary>
+/// Ändert die Farbe und Höhe von Rasterelementen basierend auf dem Einfluss eines Magneten.
+/// Prüft, ob ein Rasterelement innerhalb des Einflussradius des roten oder grünen Magnetteils liegt,
+/// und zeigt die Richtung zum Magneten über einen Pfeil an.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,9 +62,15 @@ namespace AMI.HAL{
         bool isRaised = false;
         Vector3 oldPos;
 
+        /// <summary>
+        /// Holt die Renderer-Komponente beim Start.
+        /// </summary>
         private void Awake(){
             changling = GetComponent<Renderer>();
         }
+        /// <summary>
+        /// Aktualisiert die Farbe und Position jedes Rasterelements basierend auf dem Magnetfeldeinfluss.
+        /// </summary>
         void FixedUpdate(){
             
 

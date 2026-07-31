@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/// <summary>
+/// Enthält Klassen zur Verwaltung und Visualisierung von QR-Codes.
+/// </summary>
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -43,6 +46,9 @@ namespace AMI.QRTracking
         /// </summary>
         struct ActionData
         {
+            /// <summary>
+            /// Mögliche Arten von QR-Code-Aktionen.
+            /// </summary>
             public enum Type
             {
                 Added,
@@ -74,11 +80,16 @@ namespace AMI.QRTracking
 
         private System.Collections.Generic.Queue<ActionData> pendingActions = new Queue<ActionData>();
 
-        void Awake()
+        /// <summary>
+/// Wird beim Laden der Instanz aufgerufen. Initialisiert Komponenten.
+/// </summary>
+void Awake()
         {
         }
 
-        // Use this for initialization
+        /// <summary>
+/// Initialisiert den QR-Code-Visualisierer und abonniert Ereignisse des QRCodesManager.
+/// </summary>
         void Start()
         {
             Debug.Log("QRCodesVisualizer start");
@@ -101,6 +112,11 @@ namespace AMI.QRTracking
             clearExisting = true;
         }
 
+        /// <summary>
+        /// Behandelt die Änderung des QR-Code-Tracking-Status.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="status">Gibt an, ob das Tracking läuft.</param>
         private void Instance_QRCodesTrackingStateChanged(object sender, bool status)
         {
             Debug.Log("QRCodesVisualizer Instance_QRCodesTrackingStateChanged");
@@ -110,6 +126,11 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Behandelt das Hinzufügen eines neuen QR-Codes.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten mit dem hinzugefügten QR-Code.</param>
         private void Instance_QRCodeAdded(object sender, QRCodeEventArgs<Microsoft.MixedReality.QR.QRCode> e)
         {
             Debug.Log("QRCodesVisualizer Instance_QRCodeAdded");
@@ -122,6 +143,11 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Behandelt die Aktualisierung eines vorhandenen QR-Codes.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten mit dem aktualisierten QR-Code.</param>
         private void Instance_QRCodeUpdated(object sender, QRCodeEventArgs<Microsoft.MixedReality.QR.QRCode> e)
         {
             Debug.Log("QRCodesVisualizer Instance_QRCodeUpdated");
@@ -134,6 +160,11 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Behandelt das Entfernen eines QR-Codes.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten mit dem entfernten QR-Code.</param>
         private void Instance_QRCodeRemoved(object sender, QRCodeEventArgs<Microsoft.MixedReality.QR.QRCode> e)
         {
             Debug.Log("QRCodesVisualizer Instance_QRCodeRemoved");
@@ -144,6 +175,9 @@ namespace AMI.QRTracking
             }
         }
 
+        /// <summary>
+        /// Verarbeitet die ausstehenden QR-Code-Aktionen (Hinzufügen, Aktualisieren, Entfernen).
+        /// </summary>
         private void HandleEvents()
         {
             lock (pendingActions)
@@ -204,12 +238,17 @@ namespace AMI.QRTracking
             }
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Wird pro Frame aufgerufen und verarbeitet anstehende QR-Code-Aktionen.
+        /// </summary>
         void Update()
         {
             HandleEvents();
         }
 
+        /// <summary>
+        /// Testmethode zum Auslösen des QRAdded-Ereignisses über das Kontextmenü.
+        /// </summary>
         [ContextMenu("Test")]
         public void Test()
         {

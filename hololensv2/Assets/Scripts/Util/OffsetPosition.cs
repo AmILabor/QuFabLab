@@ -1,3 +1,6 @@
+/// <summary>
+/// Versetzt die Position des zugehörigen Transforms um einen konfigurierbaren Offset.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

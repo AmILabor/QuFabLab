@@ -1,8 +1,14 @@
-﻿using MRTKExtensions.QRCodes;
+﻿/// <summary>
+/// Enthält die Aktionsklasse, die bei Erkennung eines QR-Codes ausgeführt wird.
+/// </summary>
+using MRTKExtensions.QRCodes;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace MRTKExtensions.QRCodes{
+    /// <summary>
+    /// Führt Aktionen aus, wenn ein QR-Code erkannt und positioniert wurde.
+    /// </summary>
     public class QRDetectedAction : MonoBehaviour{
         [SerializeField] QRTrackerController trackerController;
         [SerializeField] Transform objectToPosition;
@@ -12,10 +18,18 @@ namespace MRTKExtensions.QRCodes{
         [SerializeField] Transform optionalParent;
 
 
+        /// <summary>
+        /// Abonniert das PositionSet-Ereignis des Tracker-Controllers.
+        /// </summary>
         private void Start(){
             trackerController.PositionSet += PoseFound;
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn eine Pose gefunden wurde, und positioniert das zugehörige Objekt.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="pose">Die gefundene Pose.</param>
         private void PoseFound(object sender, Pose pose){
             if(objectToPosition){
                 objectToPosition.SetPositionAndRotation(pose.position, pose.rotation);

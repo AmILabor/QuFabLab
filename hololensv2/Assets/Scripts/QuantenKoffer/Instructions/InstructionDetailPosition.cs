@@ -1,3 +1,7 @@
+/// <summary>
+/// Enthält die Datenstruktur für eine einzelne Position innerhalb eines Anleitungsschritts.
+/// Definiert die erforderliche Position, Rotation und den Typ eines QuBricks.
+/// </summary>
 using QuantenKoffer.Bricks;
 using QuantenKoffer.Case;
 using UnityEngine;

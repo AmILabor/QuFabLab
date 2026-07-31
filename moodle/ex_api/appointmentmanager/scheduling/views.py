@@ -1,3 +1,4 @@
+"""Views for the scheduling app. Handles customer template management and newsletter subscriptions."""
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotAllowed, Http404, HttpResponseNotModified
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
@@ -7,11 +8,10 @@ from .management.commands.send_mails import EmailDetailsOrder, EmailDetailsUser,
 from datetime import datetime
 import pytz
 
-# Create your views here.
-
 
 @login_required()
 def index(request):
+    # Renders the main overview page with firm templates and available placeholder tags.
     setting_object = SentEmailSettings.objects.filter(remind_interval_hours__isnull=False)[0]
     firmen = Firma.objects.all()
     tasks = []
@@ -47,6 +47,7 @@ def index(request):
 
 @login_required()
 def update(request, firma_id):
+    # Updates the customer template (confirmation, reminder, content) for a given firm.
     obj, _ = CustomerTemplate.objects.get_or_create(firma=firma_id)
     obj.confirmation = request.POST['confirmation']
     obj.reminder = request.POST['reminder']

@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält die Aufzählung aller verfügbaren QuBrick-Typen (BeamSplitter, Mirror45, Mirror90, Periskope usw.).
+/// </summary>
 using System;
 
 namespace QuantenKoffer.Bricks

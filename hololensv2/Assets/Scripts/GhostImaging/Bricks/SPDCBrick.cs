@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält den SPDC-Baustein zur Erzeugung verschränkter Photonenpaare im Ghost-Imaging-Experiment.
+/// </summary>
 using System;
 using Microsoft.MixedReality.Toolkit;
 using QuantenKoffer.Bricks;

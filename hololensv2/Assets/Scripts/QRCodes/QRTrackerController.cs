@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// Enthält die Steuerungsklasse zur Verfolgung einzelner QR-Codes.
+/// </summary>
+using System;
 using Microsoft.MixedReality.QR;
 using Microsoft.MixedReality.Toolkit;
 using UnityEngine;
@@ -7,6 +10,9 @@ using UnityEngine.Serialization;
 
 namespace MRTKExtensions.QRCodes
 {
+    /// <summary>
+    /// Steuert die QR-Code-Verfolgung für einen einzelnen QR-Code und löst Positionierungsereignisse aus.
+    /// </summary>
     public class QRTrackerController : MonoBehaviour
     {
         [SerializeField] private SpatialGraphCoordinateSystemSetter spatialGraphCoordinateSystemSetter;
@@ -20,6 +26,9 @@ namespace MRTKExtensions.QRCodes
 
         public UnityEvent<QRInfo> OnQRScanned;
         public UnityEvent<QRInfo> OnQRLost;
+        /// <summary>
+        /// Gibt an, ob das Tracking aktiv ist.
+        /// </summary>
         public bool IsTrackingActive { get; private set; } = true;
 
         [SerializeField] private GameObject scanningClue;
@@ -35,6 +44,10 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Aktiviert oder deaktiviert den Scan-Hinweis.
+        /// </summary>
+        /// <param name="active">Gibt an, ob der Hinweis aktiviert werden soll.</param>
         private void SetScanningClueActive(bool active)
         {
             Debug.Log("Setting scanning clue to  " + active);
@@ -42,6 +55,9 @@ namespace MRTKExtensions.QRCodes
                 scanningClue.SetActive(active);
         }
 
+        /// <summary>
+        /// Initialisiert den Tracker und abonniert die QR-Code-Ereignisse.
+        /// </summary>
         private void Start()
         {
             AMI.Util.Console.Log("Trying to start QRCodeTRackerController");
@@ -80,16 +96,27 @@ namespace MRTKExtensions.QRCodes
             AMI.Util.Console.Log("QRCodeTRackerController started..");
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn der Tracking-Dienst initialisiert wurde.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="e">Ereignisdaten.</param>
         private void QRCodeTrackingService_Initialized(object sender, EventArgs e)
         {
             StartTracking();
         }
 
+        /// <summary>
+        /// Aktiviert den QR-Code-Tracking-Dienst.
+        /// </summary>
         private void StartTracking()
         {
             QRCodeTrackingService.Enable();
         }
 
+        /// <summary>
+        /// Setzt das Tracking zurück und aktiviert die Suche erneut.
+        /// </summary>
         public void ResetTracking()
         {
             if (QRCodeTrackingService.IsInitialized)
@@ -100,6 +127,11 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Verarbeitet einen gefundenen QR-Code und prüft, ob der Text mit dem erwarteten Wert übereinstimmt.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="msg">Die Informationen des gefundenen QR-Codes.</param>
         private void ProcessTrackingFound(object sender, QRInfo msg)
         {
             if (msg == null || !IsTrackingActive)
@@ -131,6 +163,11 @@ namespace MRTKExtensions.QRCodes
             }
         }
 
+        /// <summary>
+        /// Setzt die Position und Rotation und löst das QRScan-Ereignis aus.
+        /// </summary>
+        /// <param name="sender">Die Ereignisquelle.</param>
+        /// <param name="pose">Die zu setzende Pose.</param>
         private void SetPosition(object sender, Pose pose)
         {
             IsTrackingActive = false;

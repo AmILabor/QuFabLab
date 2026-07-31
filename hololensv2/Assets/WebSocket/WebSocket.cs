@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält eine plattformübergreifende WebSocket-Client-Implementierung für Unity.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.IO;

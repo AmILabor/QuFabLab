@@ -1,12 +1,18 @@
+/// <summary>
+/// Verwaltet die Erstellung, Positionierung und Steuerung von Periskopen auf dem Spielfeld.
+/// Enthält Referenzen auf die vier Periskop-Positionen (oben links, oben rechts, unten links, unten rechts).
+/// </summary>
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace QuantenKoffer.Bricks
 {
+    /// <summary>
+    /// Verwaltet die Erstellung, Positionierung und Steuerung von Periskopen auf dem Spielfeld.
+    /// </summary>
     public class PeriscopeHandler : MonoBehaviour
     {
-        // Start is called before the first frame update
         [SerializeField] private GameObject factory;
         [SerializeField] public float periscopeScaleFactor = 1;
         [SerializeField] public float laserScaleFactor = 1;
@@ -21,6 +27,9 @@ namespace QuantenKoffer.Bricks
 
         private Dictionary<Transform, Periscope> spawnedPeriscopes = new Dictionary<Transform, Periscope>();
 
+        /// <summary>
+        /// Initialisiert das Dictionary für die vier Periskop-Positionen.
+        /// </summary>
         private void Start()
         {
             spawnedPeriscopes[TopLeftSpawn] = null;
@@ -29,6 +38,9 @@ namespace QuantenKoffer.Bricks
             spawnedPeriscopes[BottomRightSpawn] = null;
         }
 
+        /// <summary>
+        /// Erstellt alle vier Periskope auf dem Spielfeld.
+        /// </summary>
         public void SpawnAllPeriscopes()
         {
             CreatePeriscope(0);
@@ -37,12 +49,21 @@ namespace QuantenKoffer.Bricks
             CreatePeriscope(3);
         }
 
+        /// <summary>
+        /// Erstellt ein Periskop an der angegebenen Position, falls dort noch keines existiert.
+        /// </summary>
+        /// <param name="src">Transform der Position</param>
         public void SpawnPeriscopeVoid(Transform src)
         {
             if (spawnedPeriscopes[src] == null)
                 CreatePeriscope(src);
         }
 
+        /// <summary>
+        /// Erstellt ein Periskop am angegebenen Transform und konfiguriert es.
+        /// </summary>
+        /// <param name="src">Transform-Position für das Periskop</param>
+        /// <returns>Das erstellte Periskop</returns>
         public Brick CreatePeriscope(Transform src)
         {
             GameObject brick = factory.GetComponent<BrickFactory>().CreatePeriscopeAtPosition(src);
@@ -60,16 +81,29 @@ namespace QuantenKoffer.Bricks
             return spawnedPeriscopes[src];
         }
 
+        /// <summary>
+        /// Gibt die Position des linken oberen Periskops zurück.
+        /// </summary>
+        /// <returns>Position des linken Periskops</returns>
         public Vector3 GetLeftPeriscopePosition()
         {
             return TopLeftSpawn.position;
         }
 
+        /// <summary>
+        /// Gibt die Position des rechten oberen Periskops zurück.
+        /// </summary>
+        /// <returns>Position des rechten Periskops</returns>
         public Vector3 GetRightPeriscopePosition()
         {
             return TopRightSpawn.position;
         }
 
+        /// <summary>
+        /// Erstellt ein Periskop anhand des Index (0=oben links, 1=oben rechts, 2=unten rechts, 3=unten links).
+        /// </summary>
+        /// <param name="index">Index der Periskop-Position</param>
+        /// <returns>Das erstellte Periskop</returns>
         public Brick CreatePeriscope(int index)
         {
             Transform target = null;
@@ -96,6 +130,11 @@ namespace QuantenKoffer.Bricks
             return CreatePeriscope(target);
         }
 
+        /// <summary>
+        /// Gibt das Periskop anhand des Index zurück.
+        /// </summary>
+        /// <param name="index">Index der Periskop-Position</param>
+        /// <returns>Das Periskop oder null</returns>
         public Brick GetPeriscopeByIndex(int index)
         {
             switch (index)
@@ -113,6 +152,11 @@ namespace QuantenKoffer.Bricks
             return null;
         }
 
+        /// <summary>
+        /// Prüft, ob ein Periskop am angegebenen Index aktiv ist.
+        /// </summary>
+        /// <param name="index">Index der Periskop-Position</param>
+        /// <returns>True, wenn das Periskop aktiv ist</returns>
         public bool IsPeriscopeActive(int index)
         {
             switch (index)
@@ -130,6 +174,9 @@ namespace QuantenKoffer.Bricks
             return false;
         }
 
+        /// <summary>
+        /// Startet die Laserstrahlen der aktiven linken Periskope.
+        /// </summary>
         [ContextMenu("StartBeams")]
         public void StartBeams()
         {
@@ -139,11 +186,19 @@ namespace QuantenKoffer.Bricks
                 spawnedPeriscopes[BottomLeftSpawn]?.StartBeam(LaserParent, SpeedMultiplier * laserScaleFactor);
         }
 
+        /// <summary>
+        /// Setzt den Geschwindigkeitsmultiplikator für Laserstrahlen.
+        /// </summary>
+        /// <param name="speed">Geschwindigkeitswert</param>
         public void SetSpeed(float speed)
         {
             SpeedMultiplier = speed;
         }
 
+        /// <summary>
+        /// Entfernt ein Periskop anhand des Index.
+        /// </summary>
+        /// <param name="index">Index des zu entfernenden Periskops</param>
         public void ClearPeriscope(int index)
         {
             if (!IsPeriscopeActive(index)) return;
@@ -164,6 +219,9 @@ namespace QuantenKoffer.Bricks
             }
         }
 
+        /// <summary>
+        /// Entfernt alle Periskope und löst das OnPeriscopeChange-Event aus.
+        /// </summary>
         public void ClearPeriscopes()
         {
             foreach (var brick in spawnedPeriscopes)

@@ -1,3 +1,7 @@
+/// <summary>
+/// Schaltet den aktiven Zustand eines GameObjects um (aktiv/inaktiv).
+/// Bietet sowohl eine einfache Umschaltfunktion als auch eine Funktion zum gleichzeitigen Umschalten zweier Objekte.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

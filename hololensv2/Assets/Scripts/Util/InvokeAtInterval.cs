@@ -1,3 +1,7 @@
+/// <summary>
+/// Führt ein UnityEvent wiederholt in einem konfigurierbaren Intervall aus.
+/// Bietet Funktionen zum Starten, Neustarten und einmaligen Ausführen des Events.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

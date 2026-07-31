@@ -1,3 +1,6 @@
+/// <summary>
+/// Enthält eine generische Singleton-Basisklasse für MonoBehaviours.
+/// </summary>
 using UnityEngine;
 
 namespace AMI.QRTracking
@@ -52,12 +55,18 @@ namespace AMI.QRTracking
         }
 
 
+        /// <summary>
+        /// Wird beim Beenden der Anwendung aufgerufen und setzt das Herunterfahr-Flag.
+        /// </summary>
         private void OnApplicationQuit()
         {
             m_ShuttingDown = true;
         }
 
 
+        /// <summary>
+        /// Wird beim Zerstören der Instanz aufgerufen und setzt das Herunterfahr-Flag.
+        /// </summary>
         private void OnDestroy()
         {
             m_ShuttingDown = true;

@@ -1,3 +1,8 @@
+/**
+ * Einstiegspunkt der Vue.js-Client-App.
+ * Initialisiert Vue mit Bootstrap-Vue, bindet den Vuex-Store ein
+ * und setzt die Basis-URL (Produktion vs. Entwicklung).
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'

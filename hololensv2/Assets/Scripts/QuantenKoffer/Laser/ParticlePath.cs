@@ -1,3 +1,7 @@
+/// <summary>
+/// Bewegt ein Partikel entlang eines Pfads unter Berücksichtigung der Sinuswellen-Gleichung.
+/// Der Partikelpfad rendert die zurückgelegte Strecke und kann Interferenz mehrerer Partikelpfade verarbeiten.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using AMI.Util;
@@ -146,11 +150,19 @@ namespace QuantenKoffer.Laser
             return $"{name}: {AmplitudeOffset}";
         }
 
+        /// <summary>
+        /// Setzt den Geschwindigkeitsmultiplikator für den Partikelpfad.
+        /// </summary>
+        /// <param name="value">Geschwindigkeitsmultiplikator</param>
         public void SetSpeedup(float value)
         {
             speedUp = value;
         }
 
+        /// <summary>
+        /// Fügt einen weiteren Partikelpfad für die Interferenzberechnung hinzu.
+        /// </summary>
+        /// <param name="other">Anderer Partikelpfad</param>
         public void Add(ParticlePath other)
         {
             amplitudes.Add(amplitude);

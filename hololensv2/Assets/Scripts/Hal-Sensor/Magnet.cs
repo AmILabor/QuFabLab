@@ -1,8 +1,15 @@
+/// <summary>
+/// Repräsentiert einen Magneten mit rotem und grünem Teil. Definiert den Einflussradius
+/// und zeichnet Hilfskreise im Editor zur Visualisierung des Einflussbereichs.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AMI.HAL{
+    /// <summary>
+    /// Repräsentiert einen Magneten mit rotem und grünem Teil und definiert dessen Einflussradius.
+    /// </summary>
     public class Magnet : MonoBehaviour{
         [SerializeField] float influenceRadius = 1f;
         [SerializeField] Transform redPart;

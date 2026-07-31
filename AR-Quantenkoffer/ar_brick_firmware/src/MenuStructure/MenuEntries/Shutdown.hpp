@@ -1,3 +1,11 @@
+/**
+ * @file Shutdown.hpp
+ * @brief Menüeintrag zum Herunterfahren des Bausteins.
+ * 
+ * Zeigt ein Shutdown-Symbol und eine Ja/Nein-Einstellung zum
+ * Abschalten des QuBricks auf dem TFT-Display an.
+ */
+
 #include "MenuStructure/MenuEntries/menuEntry.hpp"
   /**
    *    1   3
@@ -12,6 +20,7 @@
 class ShutdownEntrie: public MenuEntry{
     public:
         ShutdownEntrie(Adafruit_GC9A01A * display) : MenuEntry(display){};
+        /// Zeichnet das Shutdown-Symbol mit roter Warnbox und Ja/Nein-Auswahl.
         void render(){
             display->fillRoundRect(xBgStart,yBgStart,bgWidth,bgHeight,bgRadius,bgBlue); // Draw Background
             display->fillRoundRect(xTopLeft,yTopLeft,xBottomRight-xTopLeft,yBottomRight-yTopLeft,bgRadius,red); // Draw Background
@@ -29,7 +38,9 @@ class ShutdownEntrie: public MenuEntry{
                 settingString = "Ja";
             DrawSettings(settingName+": "+settingString);
         }
+        /// Gibt den Ja(1)/Nein(0)-Wert zurück.
         int getSetting(){return settingValue;}
+        /// Setzt Ja(1)/Nein(0).
         void setSetting(int value){
             settingValue = value;
             }

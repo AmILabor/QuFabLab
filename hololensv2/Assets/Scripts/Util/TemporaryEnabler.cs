@@ -1,3 +1,7 @@
+/// <summary>
+/// Aktiviert oder deaktiviert einen Renderer für eine festgelegte Zeitdauer.
+/// Schaltet nach Ablauf der Dauer automatisch zurück.
+/// </summary>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
