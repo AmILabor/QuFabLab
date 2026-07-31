@@ -609,6 +609,23 @@ The QuBoard routes these signals through the cover plate's pogo pin pads to each
 
 ### LED Indicators
 
+<<<<<<< HEAD
+<img src="./images/green_yellow_status_and_power_LED.jpeg" alt="Green status, yellow status, and yellow power LED" style="width:45%"/>
+<img src="./images/green_red_status_and_power_LED.jpeg" alt="Green status, red error, and yellow power LED" style="width:45%"/>
+
+*Figures 16 and 17: LED states on the QuBoard Interface PCB (yellow power LED always on when powered)*
+
+| Color | GPIO | Meaning |
+|-------|:----:|---------|
+| Yellow (power) | — | **Power** — on when the control board has power (hardwired, not GPIO driven) |
+| Red | 5 | **Error** — on when there is a connection error between the bricks and the QuBoard / Raspberry Pi |
+| Yellow (status) | 22 | **Setup complete** — on when all required bricks are placed with correct type and rotation (Michelson interferometer configuration) |
+| Green | 26 | **System ready** — on when a brick can be placed; turns off for a few seconds after a brick is placed until the next one can be placed |
+
+The red and status LEDs are controlled by `qucase` based on runtime checks:
+- Red LED state is updated on each scan cycle (every ~100ms)
+- Yellow status LED reflects the result of `check_setup_complete()` which validates the `REQUIRED_BRICK_CONFIG` (see below)
+=======
 | Color | GPIO | Meaning |
 |-------|:----:|---------|
 | Red | 5 | **Error** — on when a brick read error or board error is detected (e.g. I2C communication failure) |
@@ -618,6 +635,7 @@ The QuBoard routes these signals through the cover plate's pogo pin pads to each
 The red and yellow LEDs are controlled by `qucase` based on runtime checks:
 - Red LED state is updated on each scan cycle (every ~100ms)
 - Yellow LED reflects the result of `check_setup_complete()` which validates the `REQUIRED_BRICK_CONFIG` (see below)
+>>>>>>> 0973e189b4478b23cfa265c8c2a69874e8db7232
 
 ### Required Brick Configuration (Michelson Interferometer)
 
